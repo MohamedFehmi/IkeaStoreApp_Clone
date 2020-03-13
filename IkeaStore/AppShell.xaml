@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:IkeaStore.Views"
+       Shell.NavBarIsVisible="False"
+       x:Class="IkeaStore.AppShell">
+
+    <Shell.Resources>
+        <ResourceDictionary>
+
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <Tab Title="Home" Icon="homeIcon">
+            <ShellContent ContentTemplate="{DataTemplate views:}"/>
+        </Tab>
+
+        <Tab Title="Categories" Icon="couchIcon">
+            <ShellContent ContentTemplate="{DataTemplate views:}"/>
+        </Tab>
+
+        <Tab Title="ShoppingList" Icon="shoppinglistIcon">
+            <ShellContent ContentTemplate="{DataTemplate views:}"/>
+        </Tab>
+
+        <Tab Title="Profile" Icon="userprofileIcon">
+            <ShellContent ContentTemplate="{DataTemplate views:}"/>
+        </Tab>
+    </TabBar>
+</Shell>
