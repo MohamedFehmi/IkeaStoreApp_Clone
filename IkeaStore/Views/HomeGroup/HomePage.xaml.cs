@@ -14,22 +14,33 @@ namespace IkeaStore.Views.HomeGroup
         public HomePage()
         {
             InitializeComponent();
-
-            // Get the view model bound to the page
+            
+            // Setting the binding context
             homeViewModel = Resources["vm"] as HomeViewModel;
             this.BindingContext = homeViewModel;
         }
 
-        // Make the search list view covers the whole content of the page
-        void SearchBar_Focused(System.Object sender, Xamarin.Forms.FocusEventArgs e)
+        protected override void OnAppearing()
         {
-            homeViewModel.IsSearchListActive = true;
+            base.OnAppearing();
         }
 
-        // Hide the search list view
+        void SearchBar_Focused(System.Object sender, Xamarin.Forms.FocusEventArgs e)
+        {
+            // Make the search list view covers the whole content of the page
+            homeViewModel.IsSearchListActive = true;
+            
+            // Hide the scan barcode button
+            homeViewModel.IsScanBarcodeBtnVisible = false;
+        }
+
         void SearchBar_Unfocused(System.Object sender, Xamarin.Forms.FocusEventArgs e)
         {
+            // Hide the search list view
             homeViewModel.IsSearchListActive = false;
+
+            // Display the scan barcode button again
+            homeViewModel.IsScanBarcodeBtnVisible = true;
         }
     }
 }

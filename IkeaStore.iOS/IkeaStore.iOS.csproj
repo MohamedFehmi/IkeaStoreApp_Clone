@@ -138,6 +138,9 @@
     <BundleResource Include="Resources\shoppinglistIcon.png" />
     <BundleResource Include="Resources\userprofileIcon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CustomRenderers\" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\IkeaStore\IkeaStore.projitems" Label="Shared" />
 </Project>

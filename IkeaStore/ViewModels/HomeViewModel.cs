@@ -9,9 +9,10 @@ namespace IkeaStore.ViewModels
         {
         }
 
-        // Search list view specific logic
+        #region: Header view
 
-            private bool isSearchListActive = false;
+            // Search list logic
+            private bool isSearchListActive;
 
             public bool IsSearchListActive
             {
@@ -31,6 +32,30 @@ namespace IkeaStore.ViewModels
                     }
                 }
             }
+
+            // Scan barcode button logic
+            private bool isScanBarcodeBtnVisible;
+
+            public bool IsScanBarcodeBtnVisible
+            {
+                    get
+                    {
+                        return isScanBarcodeBtnVisible;
+                    }
+
+                    set
+                    {
+                        // Only update value when it is different than the new one
+                        if (isScanBarcodeBtnVisible != value)
+                        {
+                            isScanBarcodeBtnVisible = value;
+
+                            OnPropertyChanged(nameof(IsScanBarcodeBtnVisible));
+                        }
+                    }
+            }
+
+        #endregion
 
         public event PropertyChangedEventHandler PropertyChanged;
 
