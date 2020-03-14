@@ -9,6 +9,71 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <Label Text="Welcome to Home page" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+
+        <ScrollView VerticalScrollBarVisibility="Never">
+            
+            <Grid BackgroundColor="#e6e6e6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!--Header: SearchBar + tabbed view-->
+                <Frame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="White" Padding="8,0,8,0">
+
+                    <Grid RowSpacing="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+
+                        <!--Navigation bar-->
+                        <Grid Grid.Row="0" BackgroundColor="Gray">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <!--<ColumnDefinition Width="auto" />-->
+                            </Grid.ColumnDefinitions>
+
+                            <SearchBar BackgroundColor="Transparent" Focused="SearchBar_Focused" Unfocused="SearchBar_Unfocused" Placeholder="Search" HeightRequest="50" CancelButtonColor="Blue"/>
+                            <ImageButton Source="shoppinglistIcon" HeightRequest="40" WidthRequest="40" HorizontalOptions="End"/>
+
+                        </Grid>
+
+                        <!--Tabbed view-->
+                        <Frame Grid.Row="1" HasShadow="True" VerticalOptions="FillAndExpand" HeightRequest="200">
+
+                        </Frame>
+                    </Grid>
+                    
+                </Frame>
+
+
+                <Frame Grid.Row="1" Grid.Column="0" HeightRequest="200" BackgroundColor="White" Margin="5,0,0,0">
+                    
+                </Frame>
+
+                <Frame Grid.Row="1" Grid.Column="1" HeightRequest="200" BackgroundColor="White" Margin="0,0,5,0">
+                    
+                </Frame>
+
+                <!--Footer content-->
+                <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="50" BackgroundColor="White" Margin="5,0,5,0">
+                    
+                </Frame>
+
+                <!-- Search list -->
+                <ListView x:Name="SearchList" IsVisible="{Binding IsSearchListActive, Mode=TwoWay}" BackgroundColor="White" Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,50,0,0">
+
+                </ListView>
+
+            </Grid>
+        </ScrollView>
+    
     </ContentPage.Content>
 </ContentPage>
