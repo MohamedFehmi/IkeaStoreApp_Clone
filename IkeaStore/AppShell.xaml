@@ -7,25 +7,39 @@
 
     <Shell.Resources>
         <ResourceDictionary>
-
+            <Color x:Key="ThemeColor">#db3a37</Color>
+            <Color x:Key="WhiteColor">White</Color>
+            <Color x:Key="BgColor">#1318a1</Color>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <!--Shell-->
+                <Setter Property="Shell.BackgroundColor" Value="{StaticResource BgColor}"/>
+                <Setter Property="Shell.ForegroundColor" Value="{StaticResource ThemeColor}"/>
+                <Setter Property="Shell.UnselectedColor" Value="{StaticResource WhiteColor}"/>
+                
+                <!--Tab bar-->
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource BgColor}"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource ThemeColor}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource WhiteColor}"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}"/>
         </ResourceDictionary>
     </Shell.Resources>
 
     <TabBar>
-        <Tab Title="Home" Icon="homeIcon">
-            <ShellContent ContentTemplate="{DataTemplate views:}"/>
+        <Tab Icon="homeIcon">
+            <ShellContent ContentTemplate="{DataTemplate views:HomeGroup.HomePage}"/>
         </Tab>
 
-        <Tab Title="Categories" Icon="couchIcon">
-            <ShellContent ContentTemplate="{DataTemplate views:}"/>
+        <Tab Icon="couchIcon">
+            <ShellContent ContentTemplate="{DataTemplate views:CategoriesGroup.CategoriesPage}"/>
         </Tab>
 
-        <Tab Title="ShoppingList" Icon="shoppinglistIcon">
-            <ShellContent ContentTemplate="{DataTemplate views:}"/>
+        <Tab Icon="shoppinglistIcon">
+            <ShellContent ContentTemplate="{DataTemplate views:ShoppingListGroup.ShoppingListPage}"/>
         </Tab>
 
-        <Tab Title="Profile" Icon="userprofileIcon">
-            <ShellContent ContentTemplate="{DataTemplate views:}"/>
+        <Tab Icon="userprofileIcon">
+            <ShellContent ContentTemplate="{DataTemplate views:UserProfileGroup.UserProfilePage}"/>
         </Tab>
     </TabBar>
 </Shell>
