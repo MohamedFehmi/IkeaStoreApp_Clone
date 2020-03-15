@@ -38,7 +38,7 @@
                             <!--<ColumnDefinition Width="auto" />-->
                         </Grid.ColumnDefinitions>
 
-                        <SearchBar x:Name="SearchBar" BackgroundColor="Green" Focused="SearchBar_Focused" Unfocused="SearchBar_Unfocused" Placeholder="Search" HeightRequest="50" CancelButtonColor="Blue"/>
+                        <SearchBar x:Name="SearchBar" BackgroundColor="White" Focused="SearchBar_Focused" Unfocused="SearchBar_Unfocused" Placeholder="Search" HeightRequest="50" CancelButtonColor="Blue"/>
 
                         <ImageButton x:Name="ScanBarCodeButton" Source="shoppinglistIcon" IsVisible="{Binding IsScanBarcodeBtnVisible}" HeightRequest="40" WidthRequest="40" HorizontalOptions="End" Margin="0,0,10,0"/>
                     </Grid>
