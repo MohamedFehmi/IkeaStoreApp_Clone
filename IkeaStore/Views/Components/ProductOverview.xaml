@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IkeaStore.Views.Components.ProductOverview">
+    <ContentView.Content>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--Product image-->
+            <Image Grid.Column="0" Source="offerscover.jpg" Aspect="AspectFill"/>
+
+            <!--Product details-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label x:Name="NewProductLabel"
+                       Grid.Row="0"
+                       Text="Neu"
+                       FontSize="14"
+                       TextColor="Orange"/>
+
+                <Label x:Name="ProductNameLabel"
+                       Grid.Row="1"
+                       Text="KUGGIS"
+                       FontSize="16"
+                       Style="Bold"
+                       TextColor="Black"/>
+
+                <Label x:Name="ProductDetailLabel"
+                       Grid.Row="2"
+                       Text="Box 30x30x30 cm"
+                       FontSize="11"
+                       TextColor="Black"/>
+
+                <Label x:Name="PriceLabel"
+                       Grid.Row="3"
+                       Text="9.99"
+                       FontSize="18"
+                       Style="Bold"
+                       TextColor="Black"/>
+
+            </Grid>
+
+        </Grid>
+
+    </ContentView.Content>
+</ContentView>

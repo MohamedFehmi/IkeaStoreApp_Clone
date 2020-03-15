@@ -38,6 +38,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Components\ProductOverview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Components\NavigateToAllProducts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -68,6 +76,13 @@
       <DependentUpon>OfferDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\OfferDetailsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\CarouselViewProductTemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\ProductOverview.xaml.cs">
+      <DependentUpon>ProductOverview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\NavigateToAllProducts.xaml.cs">
+      <DependentUpon>NavigateToAllProducts.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
