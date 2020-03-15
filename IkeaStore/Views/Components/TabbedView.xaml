@@ -30,7 +30,8 @@
 
                 <Label x:Name="OffersTab"
                        Grid.Column="0"
-                       FontSize="20"
+                       TextColor="Black"
+                       FontSize="18"
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
                        Text="Offers">
@@ -41,7 +42,8 @@
 
                 <Label x:Name="NewProductsTab"
                        Grid.Column="1"
-                       FontSize="20"
+                       TextColor="Black"
+                       FontSize="18"
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
                        Text="New products">
@@ -52,7 +54,8 @@
 
                 <Label x:Name="PopularTab"
                        Grid.Column="2"
-                       FontSize="20"
+                       TextColor="Black"
+                       FontSize="18"
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
                        Text="Popular">
@@ -77,16 +80,19 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <!--Offers-->
-                <ImageButton Source="offerscover.jpg"
+                <!--Offers tab-->
+                <ImageButton x:Name="OffersTabContent"
+                             Source="offerscover.jpg"
                              Grid.Column="0"
                              Aspect="AspectFill"
                              Command="{Binding NavigateToOfferDetailsPage}"/>
 
-                <!--New products-->
+                <!--New products tab-->
+                <Label x:Name="NewProductsTabContent" Text="New Products" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
 
+                <!--Popular tab-->
+                <Label x:Name="PopularTabContent" Text="Popular" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
 
-                <!--Beliebt-->
             </Grid>
 
         </Grid>

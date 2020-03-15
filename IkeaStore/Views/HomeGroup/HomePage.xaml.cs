@@ -9,7 +9,6 @@ namespace IkeaStore.Views.HomeGroup
     {
         private HomeViewModel homeViewModel;
 
-
         public HomePage()
         {
             InitializeComponent();

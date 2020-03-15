@@ -23,10 +23,15 @@ namespace IkeaStore.Views.Components
             tabbedViewViewModel = Resources["vm"] as TabbedViewViewModel;
             this.BindingContext = tabbedViewViewModel;
 
-            // Retrieve the tab elements
+            // Retrieve the tabs as controls elements
             tabHeaders.Add(OffersTab);
             tabHeaders.Add(NewProductsTab);
             tabHeaders.Add(PopularTab);
+
+            // Retrieve the tabs contents
+            tabContents.Add(OffersTabContent);
+            tabContents.Add(NewProductsTabContent);
+            tabContents.Add(PopularTabContent);
         }
 
         private async void TabBar_Selected(System.Object sender, System.EventArgs e)
@@ -49,10 +54,17 @@ namespace IkeaStore.Views.Components
             // Translate the selection underline
             _ = SelectionUnderline.TranslateTo(selectedTabLabel.Bounds.X, 0, 150, easing: Easing.SinInOut);
 
-            // Update the style of the selected tab
+            // Apply a fade effect on the old content to hide
+            await tabContents[selectedIndex].FadeTo(0);
 
-            // Update the content
+            // Hide the content of the unselected tab
+            tabContents[selectedIndex].IsVisible = false;
 
+            // Display the content of the selected tab
+            tabContents[newIndex].IsVisible = true;
+
+            // Apply a fade effect on the new content to be displayed
+            _ = tabContents[newIndex].FadeTo(1);
 
             selectedIndex = newIndex;
         }
