@@ -67,6 +67,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\HomeGroup\OfferDetailsPage.xaml.cs">
       <DependentUpon>OfferDetailsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\OfferDetailsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
