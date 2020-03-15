@@ -12,13 +12,30 @@ namespace IkeaStore.ViewModels
         public ICommand OpenYoutubePage { get; private set; }
         public ICommand OpenTwitterPage { get; private set; }
 
-        private Uri uri;
+        private Uri app_uri;
+        private Uri browser_uri;
+
+        private Uri facebook_app_uri;
+        private Uri youtube_app_uri;
+        private Uri twitter_app_uri;
+
+        private Uri facebook_browser_uri;
+        private Uri youtube_browser_uri;
+        private Uri twitter_browser_uri;
 
         public HomeViewModel()
         {
-            OpenFacebookPage = new Command(OpenFacebook);
-            OpenYoutubePage = new Command(OpenYoutube);
-            OpenTwitterPage = new Command(OpenTwitter);
+            OpenFacebookPage = new Command(OpenApp);
+            OpenYoutubePage = new Command(OpenApp);
+            OpenTwitterPage = new Command(OpenApp);
+
+            facebook_app_uri = new Uri("fb://IKEAdeutschland");
+            youtube_app_uri = new Uri("youtube://user/IKEAdeutschland");
+            twitter_app_uri = new Uri("twitter://IKEAdeutschland");
+
+            facebook_browser_uri = new Uri("https://www.facebook.com/IKEAdeutschland/?brand_redir=DISABLE");
+            youtube_browser_uri = new Uri("https://m.youtube.com/IKEAdeutschland/");
+            twitter_browser_uri = new Uri("https://twitter.com/IKEA_Presse");
         }
 
         #region: Header view
@@ -71,69 +88,41 @@ namespace IkeaStore.ViewModels
         #region: Footer view
         //Open the specified app if supported otherwise open the browser.
 
-        public async void OpenFacebook()
+        public async void OpenApp(object param)
         {
+            bool isAppInstalledOnDevice = false;
+
             try
             {
-                uri = new Uri("fb://IKEAdeutschland");
-                bool isAppInstalledOnDevice = await Launcher.CanOpenAsync(uri);
+                // Select the corresponding uri to be opened in the App
+                var theSelectedAppUri = param.Equals("facebook") ? facebook_app_uri : param.Equals("youtube") ? youtube_app_uri : twitter_app_uri;
 
+                app_uri = theSelectedAppUri;
+
+                // Select the corresponding uri to be opened in Browser
+                var theSelectedBrowserUri = param.Equals("facebook") ? facebook_browser_uri : param.Equals("youtube") ? youtube_browser_uri : twitter_browser_uri;
+
+                browser_uri = theSelectedBrowserUri;
+
+                // Verify that the app is supported
+                isAppInstalledOnDevice = await Launcher.CanOpenAsync(app_uri);
+
+                // App is supported and opening
                 if (isAppInstalledOnDevice)
                 {
-                    await Launcher.OpenAsync(uri);
+                    await Launcher.OpenAsync(app_uri);
                 }
+                // App failed to open, opening in browser instead
                 else
                 {
-                    uri = new Uri("https://www.facebook.com/IKEAdeutschland/?brand_redir=DISABLE");
-                    await Launcher.OpenAsync(uri);
+                    browser_uri = new Uri("https://www.facebook.com/IKEAdeutschland/?brand_redir=DISABLE");
+                    await Launcher.OpenAsync(browser_uri);
                 }
             }
             catch (Exception e)
             {
-            }
-        }
-
-        public async void OpenYoutube()
-        {
-            try
-            {
-                uri = new Uri("youtube://user/IKEAdeutschland");
-                bool isAppInstalledOnDevice = await Launcher.CanOpenAsync(uri);
-
-                if (isAppInstalledOnDevice)
-                {
-                    await Launcher.OpenAsync(uri);
-                }
-                else
-                {
-                    uri = new Uri("https://m.youtube.com/IKEAdeutschland/");
-                    await Launcher.OpenAsync(uri);
-                }
-            }
-            catch (Exception e)
-            {
-            }
-        }
-
-        public async void OpenTwitter()
-        {
-            try
-            {
-                uri = new Uri("twitter://IKEAdeutschland");
-                bool isAppInstalledOnDevice = await Launcher.CanOpenAsync(uri);
-
-                if (isAppInstalledOnDevice)
-                {
-                    await Launcher.OpenAsync(uri);
-                }
-                else
-                {
-                    uri = new Uri("https://twitter.com/IKEA_Presse");
-                    await Launcher.OpenAsync(uri);
-                }
-            }
-            catch (Exception e)
-            {
+                var targetService = isAppInstalledOnDevice ? $"{param} app" : $"{param} page in the browser";
+                await Shell.Current.DisplayAlert("Error",$"Error while opening the {targetService}.","OK");
             }
         }
 

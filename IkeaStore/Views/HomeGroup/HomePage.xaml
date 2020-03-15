@@ -106,21 +106,24 @@
                                          WidthRequest="30"
                                          BackgroundColor="Transparent"
                                          HorizontalOptions="Start"
-                                         Command="{Binding OpenFacebookPage}"/>
+                                         Command="{Binding OpenFacebookPage}"
+                                         CommandParameter="facebook"/>
 
                             <ImageButton Source="youtubeIcon.png"
                                          HeightRequest="30"
                                          WidthRequest="30"
                                          BackgroundColor="Transparent"
                                          HorizontalOptions="Center"
-                                         Command="{Binding OpenYoutubePage}"/>
+                                         Command="{Binding OpenYoutubePage}"
+                                         CommandParameter="youtube"/>
 
                             <ImageButton Source="twitterIcon.png"
                                          HeightRequest="30"
                                          WidthRequest="30"
                                          BackgroundColor="Transparent"
                                          HorizontalOptions="End"
-                                         Command="{Binding OpenTwitterPage}"/>
+                                         Command="{Binding OpenTwitterPage}"
+                                         CommandParameter="twitter"/>
                         </StackLayout>
 
                     </Grid>
