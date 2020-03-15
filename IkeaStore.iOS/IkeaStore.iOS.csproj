@@ -141,6 +141,9 @@
     <BundleResource Include="Resources\offerscover.jpg" />
     <BundleResource Include="Resources\backbutton.png" />
     <BundleResource Include="Resources\arrowright.png" />
+    <BundleResource Include="Resources\facebookIcon.png" />
+    <BundleResource Include="Resources\twitterIcon.png" />
+    <BundleResource Include="Resources\youtubeIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CustomRenderers\" />

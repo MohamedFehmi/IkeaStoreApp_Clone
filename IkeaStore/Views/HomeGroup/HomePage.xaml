@@ -68,9 +68,63 @@
                 </Frame>
 
                 <!--Footer content-->
-                <Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="50" BackgroundColor="White" Margin="10,0,10,0" HasShadow="False">
-                    
-                </Frame>
+                <!--<Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="50" BackgroundColor="White" Margin="10,0,10,0" HasShadow="False">-->
+                    <Grid Grid.Row="2"
+                          Grid.Column="0"
+                          Grid.ColumnSpan="2"
+                          RowSpacing="10"
+                          BackgroundColor="White"
+                          Padding="0,10,0,10"
+                          Margin="10,0,10,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Label TextType="Html"
+                                Grid.Row="0"
+                                HorizontalOptions="CenterAndExpand"
+                                VerticalOptions="CenterAndExpand"
+                                TextColor="Black"
+                                FontSize="16">
+                                <![CDATA[ <strong>Follow us!</strong>]]>
+                        </Label>
+
+                        <Label Grid.Row="1"
+                               Text="Stay up to date, get inspiration and much more."
+                               TextColor="Black"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"/>
+
+                        <StackLayout Grid.Row="2"
+                                     HorizontalOptions="CenterAndExpand"
+                                     Orientation="Horizontal"
+                                     Spacing="10">
+                            <ImageButton Source="facebookIcon.png"
+                                         HeightRequest="30"
+                                         WidthRequest="30"
+                                         BackgroundColor="Transparent"
+                                         HorizontalOptions="Start"
+                                         Command="{Binding OpenFacebookPage}"/>
+
+                            <ImageButton Source="youtubeIcon.png"
+                                         HeightRequest="30"
+                                         WidthRequest="30"
+                                         BackgroundColor="Transparent"
+                                         HorizontalOptions="Center"
+                                         Command="{Binding OpenYoutubePage}"/>
+
+                            <ImageButton Source="twitterIcon.png"
+                                         HeightRequest="30"
+                                         WidthRequest="30"
+                                         BackgroundColor="Transparent"
+                                         HorizontalOptions="End"
+                                         Command="{Binding OpenTwitterPage}"/>
+                        </StackLayout>
+
+                    </Grid>
+                <!--</Frame>-->
 
                 <!-- Search list -->
                 <ListView x:Name="SearchList" IsVisible="{Binding IsSearchListActive, Mode=TwoWay}" SeparatorVisibility="None" BackgroundColor="White" Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,65,0,0">
