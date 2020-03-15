@@ -97,7 +97,7 @@ namespace IkeaStore.ViewModels
         {
             try
             {
-                uri = new Uri("vnd.youtube://IKEAdeutschland");
+                uri = new Uri("youtube://user/IKEAdeutschland");
                 bool isAppInstalledOnDevice = await Launcher.CanOpenAsync(uri);
 
                 if (isAppInstalledOnDevice)
