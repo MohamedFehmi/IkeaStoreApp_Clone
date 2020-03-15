@@ -34,7 +34,7 @@ namespace IkeaStore.ViewModels
             }
 
             // Scan barcode button logic
-            private bool isScanBarcodeBtnVisible;
+            private bool isScanBarcodeBtnVisible = true;
 
             public bool IsScanBarcodeBtnVisible
             {

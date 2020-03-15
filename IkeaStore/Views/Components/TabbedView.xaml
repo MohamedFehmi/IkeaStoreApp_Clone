@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:IkeaStore.ViewModels"
+             x:Class="IkeaStore.Views.Components.TabbedView">
+
+    <ContentView.Resources>
+        <vm:TabbedViewViewModel x:Key="vm"/>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                
+                <RowDefinition Height="Auto" />
+                
+                <RowDefinition Height="Auto" />
+            
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--Tab title-->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label x:Name="OffersTab"
+                       Grid.Column="0"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       Text="Offers">
+                       <Label.GestureRecognizers>
+                           <TapGestureRecognizer Tapped="TabBar_Selected" />
+                       </Label.GestureRecognizers>
+                </Label>
+
+                <Label x:Name="NewProductsTab"
+                       Grid.Column="1"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       Text="New products">
+                       <Label.GestureRecognizers>
+                           <TapGestureRecognizer Tapped="TabBar_Selected" />
+                       </Label.GestureRecognizers>
+                </Label>
+
+                <Label x:Name="PopularTab"
+                       Grid.Column="2"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       Text="Popular">
+                       <Label.GestureRecognizers>
+                           <TapGestureRecognizer Tapped="TabBar_Selected" />
+                       </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+
+            <!--Tab underline box-->
+            <BoxView x:Name="SelectionUnderline"
+                     Grid.Row="1"
+                     HeightRequest="5"
+                     HorizontalOptions="Start"
+                     WidthRequest="130"
+                     Color="#FFD700" />
+
+            <!--Content area-->
+            <Grid Grid.Row="2" Margin="5,0,5,5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!--Offers-->
+                <ImageButton Source="offerscover.jpg"
+                             Grid.Column="0"
+                             Aspect="AspectFill"
+                             Command="{Binding NavigateToOfferDetailsPage}"/>
+
+                <!--New products-->
+
+
+                <!--Beliebt-->
+            </Grid>
+
+        </Grid>
+
+    </ContentView.Content>
+</ContentView>

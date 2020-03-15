@@ -7,7 +7,6 @@ namespace IkeaStore.Views.HomeGroup
 {
     public partial class HomePage : ContentPage
     {
-        // Variables
         private HomeViewModel homeViewModel;
 
 

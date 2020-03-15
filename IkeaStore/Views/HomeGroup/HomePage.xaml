@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:IkeaStore.ViewModels"
+             xmlns:views="clr-namespace:IkeaStore.Views.Components"
              x:Class="IkeaStore.Views.HomeGroup.HomePage">
 
     <ContentPage.Resources>
@@ -24,30 +25,39 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <!--Header: SearchBar + tabbed view-->
-                <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="White" Padding="8,10,8,0" RowSpacing="10">
+                <!--Header view: SearchBar + tabbed view-->
+                <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" BackgroundColor="White" RowSpacing="10">
+                    <Grid.Padding>
+                        <OnPlatform x:TypeArguments="Thickness" iOS="8,10,8,0" Android="0,10,0,0"/>
+                    </Grid.Padding>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
 
                     <!--Navigation bar-->
-                    <Grid Grid.Row="0">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <!--<ColumnDefinition Width="auto" />-->
-                        </Grid.ColumnDefinitions>
+                    <Frame Grid.Row="0" Padding="0">
+                        <Frame.HasShadow>
+                            <OnPlatform x:TypeArguments="x:Boolean" iOS="False" Android="True"/>
+                        </Frame.HasShadow>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <!--<ColumnDefinition Width="auto" />-->
+                            </Grid.ColumnDefinitions>
 
-                        <SearchBar x:Name="SearchBar" BackgroundColor="White" Focused="SearchBar_Focused" Unfocused="SearchBar_Unfocused" Placeholder="Search" HeightRequest="50" CancelButtonColor="Blue"/>
+                            <SearchBar x:Name="SearchBar" BackgroundColor="White" Focused="SearchBar_Focused" Unfocused="SearchBar_Unfocused" Placeholder="Search" HeightRequest="50" CancelButtonColor="Blue"/>
 
-                        <ImageButton x:Name="ScanBarCodeButton" Source="shoppinglistIcon" IsVisible="{Binding IsScanBarcodeBtnVisible}" HeightRequest="40" WidthRequest="40" HorizontalOptions="End" Margin="0,0,10,0"/>
-                    </Grid>
+                            <ImageButton x:Name="ScanBarCodeButton" Source="barcodescanner" IsVisible="{Binding IsScanBarcodeBtnVisible}" BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" HorizontalOptions="End" Padding="5" Margin="0,0,20,0"/>
+                        </Grid>
+                    </Frame>
 
                     <!--Tabbed view-->
-                    <Frame Grid.Row="1" VerticalOptions="FillAndExpand" HeightRequest="260" BackgroundColor="Transparent" HasShadow="False">
-
+                    <Frame Grid.Row="1" VerticalOptions="FillAndExpand" HeightRequest="260" BackgroundColor="Transparent" HasShadow="False" Padding="0">
+                        <views:TabbedView HorizontalOptions="FillAndExpand"/>
                     </Frame>
                 </Grid>
+
 
                 <Frame Grid.Row="1" Grid.Column="0" HeightRequest="220" BackgroundColor="White" Margin="10,0,0,0" HasShadow="False">
                     
@@ -63,7 +73,7 @@
                 </Frame>
 
                 <!-- Search list -->
-                <ListView x:Name="SearchList" IsVisible="{Binding IsSearchListActive, Mode=TwoWay}" SeparatorVisibility="None" BackgroundColor="White" Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,50,0,0">
+                <ListView x:Name="SearchList" IsVisible="{Binding IsSearchListActive, Mode=TwoWay}" SeparatorVisibility="None" BackgroundColor="White" Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,65,0,0">
 
                 </ListView>
 

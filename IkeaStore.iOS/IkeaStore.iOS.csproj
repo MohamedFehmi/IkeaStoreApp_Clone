@@ -137,6 +137,10 @@
     <BundleResource Include="Resources\homeIcon.png" />
     <BundleResource Include="Resources\shoppinglistIcon.png" />
     <BundleResource Include="Resources\userprofileIcon.png" />
+    <BundleResource Include="Resources\barcodescanner.png" />
+    <BundleResource Include="Resources\offerscover.jpg" />
+    <BundleResource Include="Resources\backbutton.png" />
+    <BundleResource Include="Resources\arrowright.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CustomRenderers\" />

@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="True"
+             x:Class="IkeaStore.Views.HomeGroup.OfferDetailsPage">
+
+    <ContentPage.Content>
+
+        <Grid BackgroundColor="White" Margin="0,10,0,0" RowSpacing="10" ColumnSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+            <!--Navigation bar-->
+            <StackLayout Orientation="Horizontal" Grid.Row="0">
+                <ImageButton Source="backbutton"
+                             HorizontalOptions="Start"
+                             VerticalOptions="CenterAndExpand"
+                             HeightRequest="30"
+                             WidthRequest="30"
+                             Padding="5"
+                             BackgroundColor="Transparent"/>
+                <Label TextType="Html"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       FontSize="16"
+                       TextColor="Black">
+                        <![CDATA[ <strong>OFFERS & PROMOTIONS</strong>]]>
+                </Label>
+            </StackLayout>
+
+            <!--Image-->
+            <Image Source="offerscover.jpg" Grid.Row="1" Aspect="AspectFill">
+                <Image.HeightRequest>
+                    <OnPlatform x:TypeArguments="x:Double" iOS="450" Android="300"/>
+                </Image.HeightRequest>
+            </Image>
+
+            <!--Bottom page-->
+
+            <Grid BackgroundColor="White" Grid.Row="2" Margin="0,10,0,0" RowSpacing="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                
+                <Label TextType="Html"
+                       Grid.Row="0"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       TextColor="Black"
+                       FontSize="16">
+                       <![CDATA[ <strong>Offers</strong>]]>
+                </Label>
+
+                <Label Grid.Row="1"
+                       Text="Here you will find many great offers in your IKEA."
+                       TextColor="Black"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"/>
+
+                <StackLayout Grid.Row="2"
+                             Margin="30,10,30,0"
+                             Orientation="Vertical">
+
+                    <BoxView Color="#d4d3d2" HeightRequest="1" VerticalOptions="Start"/>
+
+                    <StackLayout Orientation="Horizontal">
+
+                        <Label Text="TO ALL OFFERS"
+                               TextColor="Black"
+                               Margin="20"
+                               HorizontalOptions="StartAndExpand"
+                               VerticalOptions="CenterAndExpand"/>
+
+                        <Image Source="arrowright"
+                               WidthRequest="20"
+                               HeightRequest="20"
+                               Margin="20"
+                               HorizontalOptions="End"/>
+                    </StackLayout>
+
+                    <BoxView Color="#d4d3d2" HeightRequest="1" VerticalOptions="End"/>
+                </StackLayout>
+
+            </Grid>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

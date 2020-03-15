@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using IkeaStore.Views.HomeGroup;
 using Xamarin.Forms;
 
 namespace IkeaStore
@@ -10,6 +10,9 @@ namespace IkeaStore
         public AppShell()
         {
             InitializeComponent();
+
+            // Registering routes
+            Routing.RegisterRoute("offerdetails", typeof(OfferDetailsPage));
         }
     }
 }

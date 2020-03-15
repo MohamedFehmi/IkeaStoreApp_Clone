@@ -30,6 +30,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\Components\TabbedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\HomeGroup\OfferDetailsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
@@ -52,6 +60,13 @@
       <DependentUpon>CategoriesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\HomeViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\Components\TabbedView.xaml.cs">
+      <DependentUpon>TabbedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TabbedViewViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\HomeGroup\OfferDetailsPage.xaml.cs">
+      <DependentUpon>OfferDetailsPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
@@ -61,5 +76,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Views\CategoriesGroup\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\ShoppingListGroup\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\UserProfileGroup\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\Components\" />
   </ItemGroup>
 </Project>
