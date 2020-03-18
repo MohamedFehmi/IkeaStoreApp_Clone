@@ -2,10 +2,12 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:IkeaStore.ViewModels"
+             xmlns:local="clr-namespace:IkeaStore.Views.Components"
              x:Class="IkeaStore.Views.Components.TabbedView">
 
     <ContentView.Resources>
         <vm:TabbedViewViewModel x:Key="vm"/>
+        <local:CarouselViewProductTemplateSelector x:Key="templateSelector"/>
     </ContentView.Resources>
 
     <ContentView.Content>
@@ -84,14 +86,31 @@
                 <ImageButton x:Name="OffersTabContent"
                              Source="offerscover.jpg"
                              Grid.Column="0"
+                             BackgroundColor="Transparent"
                              Aspect="AspectFill"
                              Command="{Binding NavigateToOfferDetailsPage}"/>
 
                 <!--New products tab-->
-                <Label x:Name="NewProductsTabContent" Text="New Products" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                <StackLayout x:Name="carouselComponent"
+                             Grid.ColumnSpan="2"
+                             IsVisible = "false"
+                             Orientation="Vertical">
+                    <CarouselView x:Name="carouselView"
+                              ItemTemplate="{StaticResource templateSelector}"
+                              IndicatorView="indicatorView"
+                              HorizontalOptions="CenterAndExpand"
+                              VerticalOptions="CenterAndExpand"/>
+                    <IndicatorView x:Name="indicatorView"
+                                   IndicatorColor="LightGray"
+                                   SelectedIndicatorColor="DarkGray"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="End"/>
+                </StackLayout>
+
+                <!--<Label x:Name="NewProductsTabContent" Text="New Products" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>-->
 
                 <!--Popular tab-->
-                <Label x:Name="PopularTabContent" Text="Popular" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                <!--<Label x:Name="PopularTabContent" Text="Popular" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>-->
 
             </Grid>
 

@@ -83,6 +83,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\Components\NavigateToAllProducts.xaml.cs">
       <DependentUpon>NavigateToAllProducts.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Product.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
@@ -93,5 +94,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Views\ShoppingListGroup\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\UserProfileGroup\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\Components\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Views\CustomRenderers\" />
   </ItemGroup>
 </Project>

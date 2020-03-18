@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using Foundation;
+﻿using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace IkeaStore.iOS
 {
@@ -23,7 +20,11 @@ namespace IkeaStore.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             Xamarin.Calabash.Start();
+
             global::Xamarin.Forms.Forms.Init();
+
+            ZXing.Net.Mobile.Forms.iOS.Platform.Init();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

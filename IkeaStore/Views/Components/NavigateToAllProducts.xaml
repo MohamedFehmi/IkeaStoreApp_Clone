@@ -10,7 +10,8 @@
 
             <ImageButton Source="arrowright"
                          HeightRequest="50"
-                         WidthRequest="50"/>
+                         WidthRequest="50"
+                         BackgroundColor="Transparent"/>
 
             <Label Text="See all" TextColor="Black" FontSize="18"/>
         </StackLayout>

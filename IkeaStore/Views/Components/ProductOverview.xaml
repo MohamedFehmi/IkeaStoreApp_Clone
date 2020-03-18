@@ -11,44 +11,55 @@
             </Grid.ColumnDefinitions>
 
             <!--Product image-->
-            <Image Grid.Column="0" Source="offerscover.jpg" Aspect="AspectFill"/>
+            <ImageButton Grid.Column="0"
+                         Padding="20,30,20,30"
+                         BackgroundColor="Transparent"
+                         Source="offerscover.jpg"
+                         Aspect="AspectFill"/>
 
             <!--Product details-->
-            <Grid>
+            <!--<Grid Grid.Column="1" RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-
-                <Label x:Name="NewProductLabel"
+                </Grid.RowDefinitions>-->
+                <StackLayout Grid.Column="1"
+                             Orientation="Vertical"
+                             VerticalOptions="CenterAndExpand">
+                    <Label x:Name="NewProductLabel"
                        Grid.Row="0"
                        Text="Neu"
+                       VerticalOptions="Center"
                        FontSize="14"
                        TextColor="Orange"/>
 
                 <Label x:Name="ProductNameLabel"
                        Grid.Row="1"
+                       VerticalOptions="Center"
                        Text="KUGGIS"
                        FontSize="16"
-                       Style="Bold"
+                       FontAttributes="Bold"
                        TextColor="Black"/>
 
                 <Label x:Name="ProductDetailLabel"
                        Grid.Row="2"
+                       VerticalOptions="Center"
                        Text="Box 30x30x30 cm"
                        FontSize="11"
                        TextColor="Black"/>
 
                 <Label x:Name="PriceLabel"
                        Grid.Row="3"
+                       VerticalOptions="Center"
                        Text="9.99"
-                       FontSize="18"
-                       Style="Bold"
+                       FontSize="30"
+                       FontAttributes="Bold"
                        TextColor="Black"/>
+                </StackLayout>
 
-            </Grid>
+            <!--</Grid>-->
 
         </Grid>
 

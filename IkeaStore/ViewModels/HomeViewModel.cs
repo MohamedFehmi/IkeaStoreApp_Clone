@@ -115,7 +115,6 @@ namespace IkeaStore.ViewModels
                 // App failed to open, opening in browser instead
                 else
                 {
-                    browser_uri = new Uri("https://www.facebook.com/IKEAdeutschland/?brand_redir=DISABLE");
                     await Launcher.OpenAsync(browser_uri);
                 }
             }

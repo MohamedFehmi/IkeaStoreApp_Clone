@@ -58,17 +58,117 @@
                     </Frame>
                 </Grid>
 
+                <Grid Grid.Row="1"
+                      Grid.Column="0"
+                      HeightRequest="220"
+                      BackgroundColor="White"
+                      Margin="10,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
 
-                <Frame Grid.Row="1" Grid.Column="0" HeightRequest="220" BackgroundColor="White" Margin="10,0,0,0" HasShadow="False">
-                    
-                </Frame>
+                    <Frame Grid.Column="0"
+                           HasShadow="False"
+                           Padding="0">
+                        <ImageButton Source="ikeacardheader.jpg"
+                                     Aspect="AspectFill"
+                                     HeightRequest="80"/>
+                    </Frame>
 
-                <Frame Grid.Row="1" Grid.Column="1" HeightRequest="220" BackgroundColor="White" Margin="0,0,10,0" HasShadow="False">
-                    
-                </Frame>
+                    <Label TextType="Html"
+                           Grid.Row="1"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           TextColor="Black"
+                           FontSize="14"
+                           Margin="10,-20,10,0">
+                           <![CDATA[ <strong>IKEA Hamburg-Altona</strong>]]>
+                     </Label>
+
+                    <Label Text="Welcome!"
+                           Grid.Row="1"
+                           TextColor="Black"
+                           FontSize="11"
+                           HorizontalOptions="Center"
+                           Margin="0,25,0,0"/>
+
+                    <!--<Frame HasShadow="False"
+                           Grid.Row="2"/>-->
+                    <Label Text="Chart goes here!"
+                           HorizontalOptions="CenterAndExpand"
+                           Grid.Row="2"/>
+
+                    <Label Text="Peak period"
+                           Grid.Row="3"
+                           TextColor="Black"
+                           FontSize="11"
+                           HorizontalOptions="Center"
+                           Margin="0,0,0,10"/>
+                </Grid>
+
+                <!--Right card : Sign in card-->
+                <Grid Grid.Row="1"
+                       Grid.Column="1"
+                       HeightRequest="220"
+                       BackgroundColor="White"
+                       Margin="0,0,10,0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="40"/>    
+                    </Grid.RowDefinitions>
+
+                    <StackLayout Grid.Column="0"
+                                 Orientation="Vertical"
+                                 BackgroundColor="#118bb8">
+                        <Label TextType="Html"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               TextColor="White"
+                               FontSize="14">
+                               <![CDATA[ <strong>IKEA Family</strong>]]>
+                        </Label>
+                        <BoxView Color="#FFD700"
+                                 VerticalOptions="End"
+                                 HeightRequest="5"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="2"
+                                 Orientation="Vertical"
+                                 VerticalOptions="Center">
+
+                        <Label TextType="Html"
+                           
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="StartAndExpand"
+                               TextColor="Black"
+                               FontSize="14"
+                               Margin="10,0,10,0">
+                               <![CDATA[ <strong>Sign in now</strong>]]>
+                        </Label>
+
+                        <Label Text="Find more benefits and offers!"
+                               TextColor="Black"
+                               FontSize="11"
+                               HorizontalOptions="CenterAndExpand"
+                               Margin="0,0,0,0"/>
+                        </StackLayout>
+
+                        <Button Grid.Row="3"
+                                BackgroundColor="#118bb8"
+                                Text="+ Add card"
+                                TextColor="White"
+                                FontSize="11"
+                                VerticalOptions="End"/>
+                </Grid>
 
                 <!--Footer content-->
-                <!--<Frame Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HeightRequest="50" BackgroundColor="White" Margin="10,0,10,0" HasShadow="False">-->
+
                     <Grid Grid.Row="2"
                           Grid.Column="0"
                           Grid.ColumnSpan="2"

@@ -23,6 +23,7 @@ namespace IkeaStore.Views.Components
             tabbedViewViewModel = Resources["vm"] as TabbedViewViewModel;
             this.BindingContext = tabbedViewViewModel;
 
+            carouselView.ItemsSource = tabbedViewViewModel.GetAllProducts().Result;
             // Retrieve the tabs as controls elements
             tabHeaders.Add(OffersTab);
             tabHeaders.Add(NewProductsTab);
@@ -30,8 +31,8 @@ namespace IkeaStore.Views.Components
 
             // Retrieve the tabs contents
             tabContents.Add(OffersTabContent);
-            tabContents.Add(NewProductsTabContent);
-            tabContents.Add(PopularTabContent);
+            tabContents.Add(carouselComponent);
+            tabContents.Add(carouselComponent);
         }
 
         private async void TabBar_Selected(System.Object sender, System.EventArgs e)
