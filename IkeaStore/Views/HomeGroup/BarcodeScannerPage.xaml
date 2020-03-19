@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:vm="clr-namespace:IkeaStore.ViewModels"
+             x:Class="IkeaStore.Views.HomeGroup.BarcodeScannerPage">
+
+    <ContentPage.Resources>
+        <vm:ScannerViewModel x:Key="vm"/>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="80" />
+            </Grid.RowDefinitions>
+        
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="1"
+                       Text="SCAN"
+                       FontSize="18"
+                       TextColor="Black"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"/>
+
+                <ImageButton Grid.Column="2"
+                             Source="deletexbutton.png"
+                             BackgroundColor="Transparent"
+                             Padding="15"
+                             HorizontalOptions="EndAndExpand"
+                             VerticalOptions="CenterAndExpand"
+                             Command="{Binding ExitBarcodeScanner}"/>
+            </Grid>
+
+            <zxing:ZXingScannerView Grid.Row="1"
+                                    x:Name="_scanView"
+                                    IsScanning="True"/>
+            <!--The overlay ui-->
+
+            <Button Grid.Row="2"
+                    BackgroundColor="Transparent"
+                    BorderWidth="2"
+                    BorderColor="#118bb8"
+                    Text="Enter the barcode manually"
+                    Margin="10">
+            </Button>
+            <!--<Frame Grid.Row="2"
+                   HasShadow="True"
+                   BackgroundColor="White"/>-->
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

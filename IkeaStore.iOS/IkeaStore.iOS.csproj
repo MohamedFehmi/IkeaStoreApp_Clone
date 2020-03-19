@@ -151,6 +151,7 @@
     <BundleResource Include="Resources\twitterIcon.png" />
     <BundleResource Include="Resources\youtubeIcon.png" />
     <BundleResource Include="Resources\ikeacardheader.jpg" />
+    <BundleResource Include="Resources\deletexbutton.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CustomRenderers\" />

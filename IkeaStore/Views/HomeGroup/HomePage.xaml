@@ -43,12 +43,20 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
-                                <!--<ColumnDefinition Width="auto" />-->
                             </Grid.ColumnDefinitions>
 
                             <SearchBar x:Name="SearchBar" BackgroundColor="White" Focused="SearchBar_Focused" Unfocused="SearchBar_Unfocused" Placeholder="Search" HeightRequest="50" CancelButtonColor="Blue"/>
 
-                            <ImageButton x:Name="ScanBarCodeButton" Source="barcodescanner" IsVisible="{Binding IsScanBarcodeBtnVisible}" BackgroundColor="Transparent" HeightRequest="40" WidthRequest="40" HorizontalOptions="End" Padding="5" Margin="0,0,20,0"/>
+                            <ImageButton x:Name="ScanBarCodeButton"
+                                         Source="barcodescanner"
+                                         IsVisible="{Binding IsScanBarcodeBtnVisible}"
+                                         Command="{Binding OpenBarcodeScanner}"
+                                         BackgroundColor="Transparent"
+                                         HeightRequest="40"
+                                         WidthRequest="40"
+                                         HorizontalOptions="End"
+                                         Padding="5"
+                                         Margin="0,0,20,0"/>
                         </Grid>
                     </Frame>
 

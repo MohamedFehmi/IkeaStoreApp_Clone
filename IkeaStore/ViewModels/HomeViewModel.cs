@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Windows.Input;
+using IkeaStore.Views.HomeGroup;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -8,6 +9,8 @@ namespace IkeaStore.ViewModels
 {
     public class HomeViewModel : INotifyPropertyChanged
     {
+        public ICommand OpenBarcodeScanner { get; private set; }
+
         public ICommand OpenFacebookPage { get; private set; }
         public ICommand OpenYoutubePage { get; private set; }
         public ICommand OpenTwitterPage { get; private set; }
@@ -25,6 +28,8 @@ namespace IkeaStore.ViewModels
 
         public HomeViewModel()
         {
+            OpenBarcodeScanner = new Command(OpenScannerPage);
+
             OpenFacebookPage = new Command(OpenApp);
             OpenYoutubePage = new Command(OpenApp);
             OpenTwitterPage = new Command(OpenApp);
@@ -82,6 +87,11 @@ namespace IkeaStore.ViewModels
                         }
                     }
             }
+
+        void OpenScannerPage()
+        {
+            AppShell.Current.Navigation.PushModalAsync(new BarcodeScannerPage(), true);
+        }
 
         #endregion
 
