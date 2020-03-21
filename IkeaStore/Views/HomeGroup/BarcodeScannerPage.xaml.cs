@@ -7,14 +7,14 @@ namespace IkeaStore.Views.HomeGroup
 {
     public partial class BarcodeScannerPage : ContentPage
     {
-        private ScannerViewModel scannerViewModel;
+        private BarcodeScannerViewModel barcodeScannerViewModel;
 
         public BarcodeScannerPage()
         {
             InitializeComponent();
 
-            scannerViewModel = Resources["vm"] as ScannerViewModel;
-            this.BindingContext = scannerViewModel;
+            barcodeScannerViewModel = Resources["vm"] as BarcodeScannerViewModel;
+            this.BindingContext = barcodeScannerViewModel;
         }
     }
 }

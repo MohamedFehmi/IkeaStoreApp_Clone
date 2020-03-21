@@ -6,7 +6,7 @@
              x:Class="IkeaStore.Views.HomeGroup.BarcodeScannerPage">
 
     <ContentPage.Resources>
-        <vm:ScannerViewModel x:Key="vm"/>
+        <vm:BarcodeScannerViewModel x:Key="vm"/>
     </ContentPage.Resources>
 
     <ContentPage.Content>

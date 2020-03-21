@@ -8,7 +8,7 @@ using Xamarin.Forms;
 
 namespace IkeaStore.ViewModels
 {
-    public class ScannerViewModel : INotifyPropertyChanged
+    public class BarcodeScannerViewModel : INotifyPropertyChanged
     {
         public ICommand ExitBarcodeScannerCommand { get; private set; }
         public ICommand OnBarcodeScannedCommand { get; private set; }
@@ -23,7 +23,7 @@ namespace IkeaStore.ViewModels
 
         private string resultDigits= "000.000.000.000";
 
-        public ScannerViewModel()
+        public BarcodeScannerViewModel()
         {
             ExitBarcodeScannerCommand = new Command(ExitScanner);
             OnBarcodeScannedCommand = new Command(OnBarcodeScanned);
