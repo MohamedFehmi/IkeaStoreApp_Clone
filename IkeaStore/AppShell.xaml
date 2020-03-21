@@ -3,23 +3,24 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:IkeaStore.Views"
        Shell.NavBarIsVisible="False"
+       Shell.FlyoutBehavior="Disabled"
        x:Class="IkeaStore.AppShell">
 
     <Shell.Resources>
         <ResourceDictionary>
-            <Color x:Key="ThemeColor">#db3a37</Color>
-            <Color x:Key="WhiteColor">White</Color>
-            <Color x:Key="BgColor">#1318a1</Color>
+            <Color x:Key="ThemeColor">White</Color>
+            <Color x:Key="InactiveColor">White</Color>
+            <Color x:Key="BgColor">#118bb8</Color>
             <Style x:Key="BaseStyle" TargetType="Element">
                 <!--Shell-->
                 <Setter Property="Shell.BackgroundColor" Value="{StaticResource BgColor}"/>
                 <Setter Property="Shell.ForegroundColor" Value="{StaticResource ThemeColor}"/>
-                <Setter Property="Shell.UnselectedColor" Value="{StaticResource WhiteColor}"/>
+                <Setter Property="Shell.UnselectedColor" Value="{StaticResource InactiveColor}"/>
                 
                 <!--Tab bar-->
                 <Setter Property="Shell.TabBarBackgroundColor" Value="{StaticResource BgColor}"/>
                 <Setter Property="Shell.TabBarForegroundColor" Value="{StaticResource ThemeColor}"/>
-                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource WhiteColor}"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="{StaticResource InactiveColor}"/>
             </Style>
             <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}"/>
         </ResourceDictionary>
@@ -30,7 +31,7 @@
             <ShellContent ContentTemplate="{DataTemplate views:HomeGroup.HomePage}"/>
         </Tab>
 
-        <Tab Icon="couchIcon">
+        <Tab Icon="couchwhitefilledIcon">
             <ShellContent ContentTemplate="{DataTemplate views:CategoriesGroup.CategoriesPage}"/>
         </Tab>
 

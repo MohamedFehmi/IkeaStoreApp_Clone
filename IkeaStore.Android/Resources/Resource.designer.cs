@@ -91,19 +91,19 @@ namespace IkeaStore.Droid
 			global::Xamarin.Essentials.Resource.Drawable.notification_template_icon_low_bg = global::IkeaStore.Droid.Resource.Drawable.notification_template_icon_low_bg;
 			global::Xamarin.Essentials.Resource.Drawable.notification_tile_bg = global::IkeaStore.Droid.Resource.Drawable.notification_tile_bg;
 			global::Xamarin.Essentials.Resource.Drawable.notify_panel_notification_icon_bg = global::IkeaStore.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
+			global::Xamarin.Essentials.Resource.Id.actions = global::IkeaStore.Droid.Resource.Id.actions;
 			global::Xamarin.Essentials.Resource.Id.action_container = global::IkeaStore.Droid.Resource.Id.action_container;
 			global::Xamarin.Essentials.Resource.Id.action_divider = global::IkeaStore.Droid.Resource.Id.action_divider;
 			global::Xamarin.Essentials.Resource.Id.action_image = global::IkeaStore.Droid.Resource.Id.action_image;
 			global::Xamarin.Essentials.Resource.Id.action_text = global::IkeaStore.Droid.Resource.Id.action_text;
-			global::Xamarin.Essentials.Resource.Id.actions = global::IkeaStore.Droid.Resource.Id.actions;
 			global::Xamarin.Essentials.Resource.Id.all = global::IkeaStore.Droid.Resource.Id.all;
 			global::Xamarin.Essentials.Resource.Id.async = global::IkeaStore.Droid.Resource.Id.async;
 			global::Xamarin.Essentials.Resource.Id.blocking = global::IkeaStore.Droid.Resource.Id.blocking;
 			global::Xamarin.Essentials.Resource.Id.bottom = global::IkeaStore.Droid.Resource.Id.bottom;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_header_text = global::IkeaStore.Droid.Resource.Id.browser_actions_header_text;
+			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_items = global::IkeaStore.Droid.Resource.Id.browser_actions_menu_items;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_item_icon = global::IkeaStore.Droid.Resource.Id.browser_actions_menu_item_icon;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_item_text = global::IkeaStore.Droid.Resource.Id.browser_actions_menu_item_text;
-			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_items = global::IkeaStore.Droid.Resource.Id.browser_actions_menu_items;
 			global::Xamarin.Essentials.Resource.Id.browser_actions_menu_view = global::IkeaStore.Droid.Resource.Id.browser_actions_menu_view;
 			global::Xamarin.Essentials.Resource.Id.center = global::IkeaStore.Droid.Resource.Id.center;
 			global::Xamarin.Essentials.Resource.Id.center_horizontal = global::IkeaStore.Droid.Resource.Id.center_horizontal;
@@ -158,14 +158,12 @@ namespace IkeaStore.Droid
 			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionContainer = global::IkeaStore.Droid.Resource.Style.Widget_Compat_NotificationActionContainer;
 			global::Xamarin.Essentials.Resource.Style.Widget_Compat_NotificationActionText = global::IkeaStore.Droid.Resource.Style.Widget_Compat_NotificationActionText;
 			global::Xamarin.Essentials.Resource.Style.Widget_Support_CoordinatorLayout = global::IkeaStore.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
-			global::Xamarin.Essentials.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::IkeaStore.Droid.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem = global::IkeaStore.Droid.Resource.Styleable.ColorStateListItem;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_alpha = global::IkeaStore.Droid.Resource.Styleable.ColorStateListItem_alpha;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_android_alpha = global::IkeaStore.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
 			global::Xamarin.Essentials.Resource.Styleable.ColorStateListItem_android_color = global::IkeaStore.Droid.Resource.Styleable.ColorStateListItem_android_color;
 			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout = global::IkeaStore.Droid.Resource.Styleable.CoordinatorLayout;
 			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_keylines = global::IkeaStore.Droid.Resource.Styleable.CoordinatorLayout_keylines;
-			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::IkeaStore.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
 			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout = global::IkeaStore.Droid.Resource.Styleable.CoordinatorLayout_Layout;
 			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::IkeaStore.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
 			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::IkeaStore.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
@@ -174,13 +172,8 @@ namespace IkeaStore.Droid
 			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::IkeaStore.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
 			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::IkeaStore.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
 			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::IkeaStore.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
+			global::Xamarin.Essentials.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::IkeaStore.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamily = global::IkeaStore.Droid.Resource.Styleable.FontFamily;
-			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderAuthority = global::IkeaStore.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
-			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderCerts = global::IkeaStore.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
-			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::IkeaStore.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
-			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::IkeaStore.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
-			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderPackage = global::IkeaStore.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
-			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderQuery = global::IkeaStore.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont = global::IkeaStore.Droid.Resource.Styleable.FontFamilyFont;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_font = global::IkeaStore.Droid.Resource.Styleable.FontFamilyFont_android_font;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_android_fontStyle = global::IkeaStore.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
@@ -192,7 +185,16 @@ namespace IkeaStore.Droid
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::IkeaStore.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_fontWeight = global::IkeaStore.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
 			global::Xamarin.Essentials.Resource.Styleable.FontFamilyFont_ttcIndex = global::IkeaStore.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderAuthority = global::IkeaStore.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderCerts = global::IkeaStore.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::IkeaStore.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::IkeaStore.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderPackage = global::IkeaStore.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::Xamarin.Essentials.Resource.Styleable.FontFamily_fontProviderQuery = global::IkeaStore.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor = global::IkeaStore.Droid.Resource.Styleable.GradientColor;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem = global::IkeaStore.Droid.Resource.Styleable.GradientColorItem;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_color = global::IkeaStore.Droid.Resource.Styleable.GradientColorItem_android_color;
+			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_offset = global::IkeaStore.Droid.Resource.Styleable.GradientColorItem_android_offset;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_centerColor = global::IkeaStore.Droid.Resource.Styleable.GradientColor_android_centerColor;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_centerX = global::IkeaStore.Droid.Resource.Styleable.GradientColor_android_centerX;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_centerY = global::IkeaStore.Droid.Resource.Styleable.GradientColor_android_centerY;
@@ -205,9 +207,7 @@ namespace IkeaStore.Droid
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_startY = global::IkeaStore.Droid.Resource.Styleable.GradientColor_android_startY;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_tileMode = global::IkeaStore.Droid.Resource.Styleable.GradientColor_android_tileMode;
 			global::Xamarin.Essentials.Resource.Styleable.GradientColor_android_type = global::IkeaStore.Droid.Resource.Styleable.GradientColor_android_type;
-			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem = global::IkeaStore.Droid.Resource.Styleable.GradientColorItem;
-			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_color = global::IkeaStore.Droid.Resource.Styleable.GradientColorItem_android_color;
-			global::Xamarin.Essentials.Resource.Styleable.GradientColorItem_android_offset = global::IkeaStore.Droid.Resource.Styleable.GradientColorItem_android_offset;
+			global::Xamarin.Essentials.Resource.Xml.xamarin_essentials_fileprovider_file_paths = global::IkeaStore.Droid.Resource.Xml.xamarin_essentials_fileprovider_file_paths;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_in = global::IkeaStore.Droid.Resource.Animation.abc_fade_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_fade_out = global::IkeaStore.Droid.Resource.Animation.abc_fade_out;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.abc_grow_fade_in_from_bottom = global::IkeaStore.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -8301,121 +8301,139 @@ namespace IkeaStore.Droid
 			public const int bluedashedbutton = 2131165279;
 			
 			// aapt resource value: 0x7F070060
-			public const int couchIcon = 2131165280;
+			public const int couchbluefilledIcon = 2131165280;
 			
 			// aapt resource value: 0x7F070061
-			public const int dashedbutton = 2131165281;
+			public const int couchfilledIcon = 2131165281;
 			
 			// aapt resource value: 0x7F070062
-			public const int deletexbutton = 2131165282;
+			public const int couchIcon = 2131165282;
 			
 			// aapt resource value: 0x7F070063
-			public const int design_bottom_navigation_item_background = 2131165283;
+			public const int couchwhitefilledIcon = 2131165283;
 			
 			// aapt resource value: 0x7F070064
-			public const int design_fab_background = 2131165284;
+			public const int dashedbutton = 2131165284;
 			
 			// aapt resource value: 0x7F070065
-			public const int design_ic_visibility = 2131165285;
+			public const int deletexbutton = 2131165285;
 			
 			// aapt resource value: 0x7F070066
-			public const int design_ic_visibility_off = 2131165286;
+			public const int design_bottom_navigation_item_background = 2131165286;
 			
 			// aapt resource value: 0x7F070067
-			public const int design_password_eye = 2131165287;
+			public const int design_fab_background = 2131165287;
 			
 			// aapt resource value: 0x7F070068
-			public const int design_snackbar_background = 2131165288;
+			public const int design_ic_visibility = 2131165288;
 			
 			// aapt resource value: 0x7F070069
-			public const int facebookIcon = 2131165289;
+			public const int design_ic_visibility_off = 2131165289;
 			
 			// aapt resource value: 0x7F07006A
-			public const int homeIcon = 2131165290;
+			public const int design_password_eye = 2131165290;
 			
 			// aapt resource value: 0x7F07006B
-			public const int ic_mtrl_chip_checked_black = 2131165291;
+			public const int design_snackbar_background = 2131165291;
 			
 			// aapt resource value: 0x7F07006C
-			public const int ic_mtrl_chip_checked_circle = 2131165292;
+			public const int facebookIcon = 2131165292;
 			
 			// aapt resource value: 0x7F07006D
-			public const int ic_mtrl_chip_close_circle = 2131165293;
+			public const int homefilledIcon = 2131165293;
 			
 			// aapt resource value: 0x7F07006E
-			public const int ikeacardheader = 2131165294;
+			public const int homeIcon = 2131165294;
 			
 			// aapt resource value: 0x7F07006F
-			public const int mtrl_snackbar_background = 2131165295;
+			public const int ic_mtrl_chip_checked_black = 2131165295;
 			
 			// aapt resource value: 0x7F070070
-			public const int mtrl_tabs_default_indicator = 2131165296;
+			public const int ic_mtrl_chip_checked_circle = 2131165296;
 			
 			// aapt resource value: 0x7F070071
-			public const int navigation_empty_icon = 2131165297;
+			public const int ic_mtrl_chip_close_circle = 2131165297;
 			
 			// aapt resource value: 0x7F070072
-			public const int notification_action_background = 2131165298;
+			public const int ikeacardheader = 2131165298;
 			
 			// aapt resource value: 0x7F070073
-			public const int notification_bg = 2131165299;
+			public const int mtrl_snackbar_background = 2131165299;
 			
 			// aapt resource value: 0x7F070074
-			public const int notification_bg_low = 2131165300;
+			public const int mtrl_tabs_default_indicator = 2131165300;
 			
 			// aapt resource value: 0x7F070075
-			public const int notification_bg_low_normal = 2131165301;
+			public const int navigation_empty_icon = 2131165301;
 			
 			// aapt resource value: 0x7F070076
-			public const int notification_bg_low_pressed = 2131165302;
+			public const int notification_action_background = 2131165302;
 			
 			// aapt resource value: 0x7F070077
-			public const int notification_bg_normal = 2131165303;
+			public const int notification_bg = 2131165303;
 			
 			// aapt resource value: 0x7F070078
-			public const int notification_bg_normal_pressed = 2131165304;
+			public const int notification_bg_low = 2131165304;
 			
 			// aapt resource value: 0x7F070079
-			public const int notification_icon_background = 2131165305;
+			public const int notification_bg_low_normal = 2131165305;
 			
 			// aapt resource value: 0x7F07007A
-			public const int notification_template_icon_bg = 2131165306;
+			public const int notification_bg_low_pressed = 2131165306;
 			
 			// aapt resource value: 0x7F07007B
-			public const int notification_template_icon_low_bg = 2131165307;
+			public const int notification_bg_normal = 2131165307;
 			
 			// aapt resource value: 0x7F07007C
-			public const int notification_tile_bg = 2131165308;
+			public const int notification_bg_normal_pressed = 2131165308;
 			
 			// aapt resource value: 0x7F07007D
-			public const int notify_panel_notification_icon_bg = 2131165309;
+			public const int notification_icon_background = 2131165309;
 			
 			// aapt resource value: 0x7F07007E
-			public const int offerscover = 2131165310;
+			public const int notification_template_icon_bg = 2131165310;
 			
 			// aapt resource value: 0x7F07007F
-			public const int shoppinglistIcon = 2131165311;
+			public const int notification_template_icon_low_bg = 2131165311;
 			
 			// aapt resource value: 0x7F070080
-			public const int splash_logo = 2131165312;
+			public const int notification_tile_bg = 2131165312;
 			
 			// aapt resource value: 0x7F070081
-			public const int splash_screen = 2131165313;
+			public const int notify_panel_notification_icon_bg = 2131165313;
 			
 			// aapt resource value: 0x7F070082
-			public const int tooltip_frame_dark = 2131165314;
+			public const int offerscover = 2131165314;
 			
 			// aapt resource value: 0x7F070083
-			public const int tooltip_frame_light = 2131165315;
+			public const int shoppinglistfilledIcon = 2131165315;
 			
 			// aapt resource value: 0x7F070084
-			public const int twitterIcon = 2131165316;
+			public const int shoppinglistIcon = 2131165316;
 			
 			// aapt resource value: 0x7F070085
-			public const int userprofileIcon = 2131165317;
+			public const int splash_logo = 2131165317;
 			
 			// aapt resource value: 0x7F070086
-			public const int youtubeIcon = 2131165318;
+			public const int splash_screen = 2131165318;
+			
+			// aapt resource value: 0x7F070087
+			public const int tooltip_frame_dark = 2131165319;
+			
+			// aapt resource value: 0x7F070088
+			public const int tooltip_frame_light = 2131165320;
+			
+			// aapt resource value: 0x7F070089
+			public const int twitterIcon = 2131165321;
+			
+			// aapt resource value: 0x7F07008A
+			public const int userprofilefilledIcon = 2131165322;
+			
+			// aapt resource value: 0x7F07008B
+			public const int userprofileIcon = 2131165323;
+			
+			// aapt resource value: 0x7F07008C
+			public const int youtubeIcon = 2131165324;
 			
 			static Drawable()
 			{

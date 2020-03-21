@@ -43,6 +43,31 @@
                                     x:Name="_scanView"
                                     IsScanning="True"/>
             <!--The overlay ui-->
+            <AbsoluteLayout Grid.Row="1">
+                <!--Outer white frame-->
+                <Frame  AbsoluteLayout.LayoutBounds=".5,.5,.6,.4"
+                        AbsoluteLayout.LayoutFlags="All"
+                        BackgroundColor="Transparent"
+                        BorderColor="White"
+                        CornerRadius="5"
+                        HasShadow="False"/>
+
+                <!--Inner white frame-->
+                <Frame  AbsoluteLayout.LayoutBounds=".5,.5,.55,.1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        BackgroundColor="Transparent"
+                        BorderColor="White"
+                        HasShadow="False"/>
+
+                <Label  AbsoluteLayout.LayoutBounds=".39,.59,80,25"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        Text="000.000.00"
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="Center"
+                        FontSize="11"
+                        Padding="5,0,5,0"
+                        BackgroundColor="White"/>
+            </AbsoluteLayout>
 
             <Button Grid.Row="2"
                     BackgroundColor="Transparent"
