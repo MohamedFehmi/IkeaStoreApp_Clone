@@ -19,7 +19,7 @@ namespace IkeaStore.Views.Components
         {
             Product product = (Product)item;
 
-            // When property toAllProcuts is set to true, use  the AllProductsView template
+            // When the carousel view reaches the last element in its items source, use the AllProductsView template
             if (product.IsLastItemInProducts)
             {
                 return AllProductsView;
