@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Diagnostics;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -11,15 +13,15 @@ namespace IkeaStore.ViewModels
         public ICommand ExitBarcodeScannerCommand { get; private set; }
         public ICommand OnBarcodeScannedCommand { get; private set; }
 
+        private ZXing.Result result;
+
         private bool isAnalyzing = true;
         private bool isScanning = true;
 
         private Color barcodeOverlayContainer = Color.White;
         private Color resultDigitsBackground = Color.White;
 
-        private string resultDigits= "000.000.00";
-
-        private ZXing.Result result;
+        private string resultDigits= "000.000.000.000";
 
         public ScannerViewModel()
         {
@@ -32,7 +34,58 @@ namespace IkeaStore.ViewModels
             Shell.Current.Navigation.PopModalAsync();
         }
 
-        #region : Scanner
+
+#region : Scanner
+
+        /// <summary>
+        /// Defines the next steps to perform once the scanner finished the scan
+        /// with the result as a QR_CODE or BARCODE.
+        /// </summary>
+        void OnBarcodeScanned()
+        {
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                // Stop scanner from analysing
+                IsAnalyzing = false;
+
+                // Do something with the result
+                BarcodeOverlayContainer = ResultDigitsBackground = Color.Green;
+                ResultDigits = SplitDigitsByPeriod(Result.Text);
+
+                await Task.Delay(4000);
+
+                BarcodeOverlayContainer = ResultDigitsBackground = Color.White;
+                ResultDigits = "000.000.000.000";
+
+                // Write to the local database the scanned products
+
+
+
+                // Restart the scanner
+                IsAnalyzing = true;
+            });
+        }
+
+        /// <summary>
+        /// A property that represents the result object
+        /// of the scan operation performed by the Scanner.
+        /// </summary>
+        public ZXing.Result Result
+        {
+            get
+            {
+                return result;
+            }
+
+            set
+            {
+                if (Result != value)
+                {
+                    result = value;
+                    OnPropertyChanged(nameof(Result));
+                }
+            }
+        }
 
         public bool IsAnalyzing
         {
@@ -119,56 +172,37 @@ namespace IkeaStore.ViewModels
         }
 
         /// <summary>
-        /// Defines the next steps to perform once the scanner finished the scan
-        /// with the result as a QR_CODE or BARCODE.
+        /// Separate each three digits by period '.'
         /// </summary>
-        void OnBarcodeScanned()
+        /// <param name="barcodeText">A string representation of the barcode result</param>
+        /// <returns> The passed argument splitted by period between each 3 of its digits</returns>
+        private string SplitDigitsByPeriod(string barcodeText)
         {
-            Device.BeginInvokeOnMainThread(async () =>
+            StringBuilder barcodeSplitted = new StringBuilder();
+
+            var digitCountSinceStartOrLastPeriod = 0;
+
+            for (var index = 0; index < barcodeText.Length; index++)
             {
-                // Stop scanner from analysing
-                IsAnalyzing = false;
-
-                // Do something with the result
-                BarcodeOverlayContainer = ResultDigitsBackground = Color.Green;
-                ResultDigits = Result.Text;
-
-                await Task.Delay(2000);
-
-                BarcodeOverlayContainer = ResultDigitsBackground = Color.White;
-                ResultDigits = "000.000.00";
-
-                // Write to the local database the scanned products
-
-
-
-                // Restart the scanner
-                IsAnalyzing = true;
-            });
-        }
-
-        /// <summary>
-        /// A property that represents the result object
-        /// of the scan operation performed by the Scanner.
-        /// </summary>
-        public ZXing.Result Result
-        {
-            get
-            {
-                return result;
-            }
-
-            set
-            {
-                if (Result != value)
+                if (digitCountSinceStartOrLastPeriod == 3)
                 {
-                    result = value;
-                    OnPropertyChanged(nameof(Result));
+                    barcodeSplitted.Append('.');
+                    barcodeSplitted.Append(barcodeText[index]);
+
+                    // After each insertion of '.' the digit at current index will be inserted, this makes the count at 1 instead of 0
+                    digitCountSinceStartOrLastPeriod = 1;
+                }
+                else
+                {
+                    barcodeSplitted.Append(barcodeText[index]);
+                    digitCountSinceStartOrLastPeriod++;
                 }
             }
+
+            return barcodeSplitted.ToString();
         }
 
-        #endregion : Scanner
+#endregion : Scanner
 
 
         public event PropertyChangedEventHandler PropertyChanged;

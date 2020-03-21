@@ -63,13 +63,15 @@
                         BorderColor="{Binding BarcodeOverlayContainer}"
                         HasShadow="False"/>
 
-                <Label  AbsoluteLayout.LayoutBounds=".39,.59,80,25"
+                <Label  AbsoluteLayout.LayoutBounds=".33,.59,98,25"
                         AbsoluteLayout.LayoutFlags="PositionProportional"
                         Text="{Binding ResultDigits}"
+                        HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"
                         HorizontalOptions="Center"
                         FontSize="11"
-                        Padding="5,0,5,0"
+                        Padding="3,0,3,0"
+                        Opacity="0.6"
                         BackgroundColor="{Binding ResultDigitsBackground}"/>
             </AbsoluteLayout>
 
