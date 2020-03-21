@@ -16,7 +16,8 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="80" />
             </Grid.RowDefinitions>
-        
+
+            <!-- Header -->
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -39,16 +40,17 @@
                              Command="{Binding ExitBarcodeScannerCommand}"/>
             </Grid>
 
+            <!-- Scanner -->
             <zxing:ZXingScannerView Grid.Row="1"
                                     x:Name="_scanView"
                                     IsScanning="{Binding IsScanning}"
                                     IsAnalyzing="{Binding IsAnalyzing}"
                                     Result="{Binding Result, Mode=TwoWay}"
                                     ScanResultCommand="{Binding OnBarcodeScannedCommand}"/>
-            <!--The overlay ui-->
+            <!--The layout overlay -->
             <AbsoluteLayout Grid.Row="1">
 
-                <!--Outer white frame : QR_CODE overlay-->
+                <!-- QR_CODE overlay-->
                 <Frame  AbsoluteLayout.LayoutBounds=".5,.5,.6,.4"
                         AbsoluteLayout.LayoutFlags="All"
                         BackgroundColor="Transparent"
@@ -56,13 +58,14 @@
                         CornerRadius="5"
                         HasShadow="False"/>
 
-                <!--Inner white frame : BARCODE overlay-->
+                <!--BARCODE overlay-->
                 <Frame  AbsoluteLayout.LayoutBounds=".5,.5,.55,.1"
                         AbsoluteLayout.LayoutFlags="All"
                         BackgroundColor="Transparent"
                         BorderColor="{Binding BarcodeOverlayContainerColor}"
                         HasShadow="False"/>
 
+                <!--BARCODE DIGITS-->
                 <Label  AbsoluteLayout.LayoutBounds=".33,.59,98,25"
                         AbsoluteLayout.LayoutFlags="PositionProportional"
                         Text="{Binding ResultDigits}"
@@ -73,6 +76,12 @@
                         Padding="3,0,3,0"
                         Opacity="0.6"
                         BackgroundColor="{Binding ResultDigitsBackground}"/>
+
+                <Image  AbsoluteLayout.LayoutBounds=".73,.59,25,25"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        BackgroundColor="Transparent"
+                        Source="{Binding BarcodeIndicatorImageSource}"/>
+
             </AbsoluteLayout>
 
             <Button Grid.Row="2"

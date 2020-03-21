@@ -21,6 +21,8 @@ namespace IkeaStore.ViewModels
         private Color barcodeOverlayContainerColor = Color.White;
         private Color resultDigitsBackground = Color.White;
 
+        private string barcodeIndicatorImageSource = "barcodescannerwhite";
+
         private string resultDigits= "000.000.000.000";
 
         public BarcodeScannerViewModel()
@@ -50,11 +52,13 @@ namespace IkeaStore.ViewModels
 
                 // Do something with the result
                 BarcodeOverlayContainerColor = ResultDigitsBackground = Color.Green;
+                BarcodeIndicatorImageSource = "barcodescannergreen";
                 ResultDigits = SplitDigitsByPeriod(Result.Text);
 
                 await Task.Delay(4000);
 
                 BarcodeOverlayContainerColor = ResultDigitsBackground = Color.White;
+                BarcodeIndicatorImageSource = "barcodescannerwhite";
                 ResultDigits = "000.000.000.000";
 
                 // Write to the local database the scanned products
@@ -167,6 +171,22 @@ namespace IkeaStore.ViewModels
                 {
                     resultDigitsBackground = value;
                     OnPropertyChanged(nameof(ResultDigitsBackground));
+                }
+            }
+        }
+
+        public string BarcodeIndicatorImageSource
+        {
+            get
+            {
+                return barcodeIndicatorImageSource;
+            }
+            set
+            {
+                if (BarcodeIndicatorImageSource != value)
+                {
+                    barcodeIndicatorImageSource = value;
+                    OnPropertyChanged(nameof(BarcodeIndicatorImageSource));
                 }
             }
         }
