@@ -9,13 +9,13 @@ namespace IkeaStore.ViewModels
 {
     public class OfferDetailsViewModel : INotifyPropertyChanged
     {
-        public ICommand NavigateBackToHomePage { private set; get; }
-        public ICommand OpenAllOffersInBrowser { private set; get; }
+        public ICommand NavigateBackToHomePageCommand { private set; get; }
+        public ICommand OpenAllOffersInBrowserCommand { private set; get; }
         
         public OfferDetailsViewModel()
         {
-            NavigateBackToHomePage = new Command(NavigateBack);
-            OpenAllOffersInBrowser = new Command(OpenAllOffers);
+            NavigateBackToHomePageCommand = new Command(NavigateBack);
+            OpenAllOffersInBrowserCommand = new Command(OpenAllOffers);
 
             // Retrieve the offer object
         }

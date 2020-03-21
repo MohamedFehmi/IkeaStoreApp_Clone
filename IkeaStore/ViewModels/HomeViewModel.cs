@@ -11,9 +11,9 @@ namespace IkeaStore.ViewModels
     {
         public ICommand OpenBarcodeScanner { get; private set; }
 
-        public ICommand OpenFacebookPage { get; private set; }
-        public ICommand OpenYoutubePage { get; private set; }
-        public ICommand OpenTwitterPage { get; private set; }
+        public ICommand OpenFacebookPageCommand { get; private set; }
+        public ICommand OpenYoutubePageCommand { get; private set; }
+        public ICommand OpenTwitterPageCommand { get; private set; }
 
         private Uri app_uri;
         private Uri browser_uri;
@@ -30,9 +30,9 @@ namespace IkeaStore.ViewModels
         {
             OpenBarcodeScanner = new Command(OpenScannerPage);
 
-            OpenFacebookPage = new Command(OpenApp);
-            OpenYoutubePage = new Command(OpenApp);
-            OpenTwitterPage = new Command(OpenApp);
+            OpenFacebookPageCommand = new Command(OpenApp);
+            OpenYoutubePageCommand = new Command(OpenApp);
+            OpenTwitterPageCommand = new Command(OpenApp);
 
             facebook_app_uri = new Uri("fb://IKEAdeutschland");
             youtube_app_uri = new Uri("youtube://user/IKEAdeutschland");

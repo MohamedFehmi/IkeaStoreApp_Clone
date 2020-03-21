@@ -28,7 +28,7 @@
                              WidthRequest="30"
                              Padding="5"
                              BackgroundColor="Transparent"
-                             Command="{Binding NavigateBackToHomePage}"/>
+                             Command="{Binding NavigateBackToHomePageCommand}"/>
                 <Label TextType="Html"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="CenterAndExpand"
@@ -78,7 +78,7 @@
 
                     <StackLayout Orientation="Horizontal">
                         <StackLayout.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding OpenAllOffersInBrowser}"/>
+                            <TapGestureRecognizer Command="{Binding OpenAllOffersInBrowserCommand}"/>
                         </StackLayout.GestureRecognizers>
                         <Label Text="TO ALL OFFERS"
                                TextColor="Black"

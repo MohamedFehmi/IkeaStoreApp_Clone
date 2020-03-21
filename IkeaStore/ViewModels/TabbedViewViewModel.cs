@@ -11,13 +11,13 @@ namespace IkeaStore.ViewModels
 {
     public class TabbedViewViewModel : INotifyPropertyChanged
     {
-        public ICommand NavigateToOfferDetailsPage { private set; get; }
+        public ICommand NavigateToOfferDetailsPageCommand { private set; get; }
 
         public List<Product> ProductsList;
 
         public TabbedViewViewModel()
         {
-            NavigateToOfferDetailsPage = new Command(ToOfferDetails);
+            NavigateToOfferDetailsPageCommand = new Command(ToOfferDetails);
 
             ProductsList = new List<Product>()
             {

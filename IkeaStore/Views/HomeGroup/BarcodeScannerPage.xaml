@@ -36,15 +36,19 @@
                              Padding="15"
                              HorizontalOptions="EndAndExpand"
                              VerticalOptions="CenterAndExpand"
-                             Command="{Binding ExitBarcodeScanner}"/>
+                             Command="{Binding ExitBarcodeScannerCommand}"/>
             </Grid>
 
             <zxing:ZXingScannerView Grid.Row="1"
                                     x:Name="_scanView"
-                                    IsScanning="True"/>
+                                    IsScanning="{Binding IsScanning}"
+                                    IsAnalyzing="{Binding IsAnalyzing}"
+                                    Result="{Binding Result, Mode=TwoWay}"
+                                    ScanResultCommand="{Binding OnBarcodeScannedCommand}"/>
             <!--The overlay ui-->
             <AbsoluteLayout Grid.Row="1">
-                <!--Outer white frame-->
+
+                <!--Outer white frame : QR_CODE overlay-->
                 <Frame  AbsoluteLayout.LayoutBounds=".5,.5,.6,.4"
                         AbsoluteLayout.LayoutFlags="All"
                         BackgroundColor="Transparent"
@@ -52,21 +56,21 @@
                         CornerRadius="5"
                         HasShadow="False"/>
 
-                <!--Inner white frame-->
+                <!--Inner white frame : BARCODE overlay-->
                 <Frame  AbsoluteLayout.LayoutBounds=".5,.5,.55,.1"
                         AbsoluteLayout.LayoutFlags="All"
                         BackgroundColor="Transparent"
-                        BorderColor="White"
+                        BorderColor="{Binding BarcodeOverlayContainer}"
                         HasShadow="False"/>
 
                 <Label  AbsoluteLayout.LayoutBounds=".39,.59,80,25"
                         AbsoluteLayout.LayoutFlags="PositionProportional"
-                        Text="000.000.00"
+                        Text="{Binding ResultDigits}"
                         VerticalTextAlignment="Center"
                         HorizontalOptions="Center"
                         FontSize="11"
                         Padding="5,0,5,0"
-                        BackgroundColor="White"/>
+                        BackgroundColor="{Binding ResultDigitsBackground}"/>
             </AbsoluteLayout>
 
             <Button Grid.Row="2"
