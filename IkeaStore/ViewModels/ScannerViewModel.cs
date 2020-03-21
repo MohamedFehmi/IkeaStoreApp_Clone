@@ -18,7 +18,7 @@ namespace IkeaStore.ViewModels
         private bool isAnalyzing = true;
         private bool isScanning = true;
 
-        private Color barcodeOverlayContainer = Color.White;
+        private Color barcodeOverlayContainerColor = Color.White;
         private Color resultDigitsBackground = Color.White;
 
         private string resultDigits= "000.000.000.000";
@@ -49,12 +49,12 @@ namespace IkeaStore.ViewModels
                 IsAnalyzing = false;
 
                 // Do something with the result
-                BarcodeOverlayContainer = ResultDigitsBackground = Color.Green;
+                BarcodeOverlayContainerColor = ResultDigitsBackground = Color.Green;
                 ResultDigits = SplitDigitsByPeriod(Result.Text);
 
                 await Task.Delay(4000);
 
-                BarcodeOverlayContainer = ResultDigitsBackground = Color.White;
+                BarcodeOverlayContainerColor = ResultDigitsBackground = Color.White;
                 ResultDigits = "000.000.000.000";
 
                 // Write to the local database the scanned products
@@ -121,18 +121,18 @@ namespace IkeaStore.ViewModels
             }
         }
 
-        public Color BarcodeOverlayContainer
+        public Color BarcodeOverlayContainerColor
         {
             get
             {
-                return barcodeOverlayContainer;
+                return barcodeOverlayContainerColor;
             }
             set
             {
-                if (BarcodeOverlayContainer != value)
+                if (BarcodeOverlayContainerColor != value)
                 {
-                    barcodeOverlayContainer = value;
-                    OnPropertyChanged(nameof(BarcodeOverlayContainer));
+                    barcodeOverlayContainerColor = value;
+                    OnPropertyChanged(nameof(BarcodeOverlayContainerColor));
                 }
             }
         }
@@ -178,28 +178,35 @@ namespace IkeaStore.ViewModels
         /// <returns> The passed argument splitted by period between each 3 of its digits</returns>
         private string SplitDigitsByPeriod(string barcodeText)
         {
-            StringBuilder barcodeSplitted = new StringBuilder();
-
-            var digitCountSinceStartOrLastPeriod = 0;
-
-            for (var index = 0; index < barcodeText.Length; index++)
+            try
             {
-                if (digitCountSinceStartOrLastPeriod == 3)
-                {
-                    barcodeSplitted.Append('.');
-                    barcodeSplitted.Append(barcodeText[index]);
+                StringBuilder barcodeSplitted = new StringBuilder();
 
-                    // After each insertion of '.' the digit at current index will be inserted, this makes the count at 1 instead of 0
-                    digitCountSinceStartOrLastPeriod = 1;
-                }
-                else
+                var digitCountSinceStartOrLastPeriod = 0;
+
+                for (var index = 0; index < barcodeText.Length; index++)
                 {
-                    barcodeSplitted.Append(barcodeText[index]);
-                    digitCountSinceStartOrLastPeriod++;
+                    if (digitCountSinceStartOrLastPeriod == 3)
+                    {
+                        barcodeSplitted.Append('.');
+                        barcodeSplitted.Append(barcodeText[index]);
+
+                        // After each insertion of '.' the digit at current index will be inserted, this makes the count at 1 instead of 0
+                        digitCountSinceStartOrLastPeriod = 1;
+                    }
+                    else
+                    {
+                        barcodeSplitted.Append(barcodeText[index]);
+                        digitCountSinceStartOrLastPeriod++;
+                    }
                 }
+
+                return barcodeSplitted.ToString();
             }
-
-            return barcodeSplitted.ToString();
+            catch (Exception e)
+            {
+                return barcodeText;
+            }
         }
 
 #endregion : Scanner

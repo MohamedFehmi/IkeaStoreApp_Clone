@@ -60,7 +60,7 @@
                 <Frame  AbsoluteLayout.LayoutBounds=".5,.5,.55,.1"
                         AbsoluteLayout.LayoutFlags="All"
                         BackgroundColor="Transparent"
-                        BorderColor="{Binding BarcodeOverlayContainer}"
+                        BorderColor="{Binding BarcodeOverlayContainerColor}"
                         HasShadow="False"/>
 
                 <Label  AbsoluteLayout.LayoutBounds=".33,.59,98,25"
