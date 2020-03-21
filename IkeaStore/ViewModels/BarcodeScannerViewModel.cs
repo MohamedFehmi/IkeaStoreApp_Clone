@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using ZXing.Client.Result;
 
 namespace IkeaStore.ViewModels
 {
@@ -21,7 +22,10 @@ namespace IkeaStore.ViewModels
         private Color barcodeOverlayContainerColor = Color.White;
         private Color resultDigitsBackground = Color.White;
 
+        private Color qrcodeOverlayContainerColor = Color.White;
+
         private string barcodeIndicatorImageSource = "barcodescannerwhite";
+        private string qrcodeIndicatorImageSource = "qrcodewhite";
 
         private string resultDigits= "000.000.000.000";
 
@@ -45,29 +49,57 @@ namespace IkeaStore.ViewModels
         /// </summary>
         void OnBarcodeScanned()
         {
-            Device.BeginInvokeOnMainThread(async () =>
+            try
             {
-                // Stop scanner from analysing
-                IsAnalyzing = false;
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    // Stop scanner from analysing
+                    IsAnalyzing = false;
 
-                // Do something with the result
-                BarcodeOverlayContainerColor = ResultDigitsBackground = Color.Green;
-                BarcodeIndicatorImageSource = "barcodescannergreen";
-                ResultDigits = SplitDigitsByPeriod(Result.Text);
+                    // Verify which format is scanned
+                    if (Result.BarcodeFormat == ZXing.BarcodeFormat.QR_CODE)
+                    {
+                        QRcodeOverlayContainerColor = Color.Green;
+                        QRcodeIndicatorImageSource = "qrcodegreen";
 
-                await Task.Delay(4000);
+                        await DealWithScanResult(Result.Text);
 
-                BarcodeOverlayContainerColor = ResultDigitsBackground = Color.White;
-                BarcodeIndicatorImageSource = "barcodescannerwhite";
-                ResultDigits = "000.000.000.000";
+                        QRcodeOverlayContainerColor = Color.White;
+                        QRcodeIndicatorImageSource = "qrcodewhite";
+                    }
+                    else
+                    {
+                        // Do something with the result
+                        BarcodeOverlayContainerColor = ResultDigitsBackground = Color.Green;
+                        BarcodeIndicatorImageSource = "barcodescannergreen";
+                        ResultDigits = SplitDigitsByPeriod(Result.Text);
 
-                // Write to the local database the scanned products
+                        await DealWithScanResult(Result.Text);
 
+                        BarcodeOverlayContainerColor = ResultDigitsBackground = Color.White;
+                        BarcodeIndicatorImageSource = "barcodescannerwhite";
+                        ResultDigits = "000.000.000.000";
+                    }
 
+                    // Restart the scanner
+                    IsAnalyzing = true;
+                });
+            }
+            catch (Exception e)
+            {
+                Shell.Current.DisplayAlert("Error", "Scan can not be performed for now.", "OK");
+            }
+        }
 
-                // Restart the scanner
-                IsAnalyzing = true;
-            });
+        /// <summary>
+        /// An asynchronous task that deals with the scanned barcode.
+        /// Example: call to an API to check the availability of a product with the scanned code argument.
+        /// </summary>
+        /// <param name="scannedCode">A string that represents the code scanned : Barcode or QRCode</param>
+        async Task DealWithScanResult(string scannedCode)
+        {
+            // Simulate some async work
+            await Task.Delay(2000);
         }
 
         /// <summary>
@@ -158,6 +190,22 @@ namespace IkeaStore.ViewModels
             }
         }
 
+        public Color QRcodeOverlayContainerColor
+        {
+            get
+            {
+                return qrcodeOverlayContainerColor;
+            }
+            set
+            {
+                if (QRcodeOverlayContainerColor != value)
+                {
+                    qrcodeOverlayContainerColor = value;
+                    OnPropertyChanged(nameof(QRcodeOverlayContainerColor));
+                }
+            }
+        }
+
         public Color ResultDigitsBackground
         {
             get
@@ -187,6 +235,22 @@ namespace IkeaStore.ViewModels
                 {
                     barcodeIndicatorImageSource = value;
                     OnPropertyChanged(nameof(BarcodeIndicatorImageSource));
+                }
+            }
+        }
+
+        public string QRcodeIndicatorImageSource
+        {
+            get
+            {
+                return qrcodeIndicatorImageSource;
+            }
+            set
+            {
+                if (QRcodeIndicatorImageSource != value)
+                {
+                    qrcodeIndicatorImageSource = value;
+                    OnPropertyChanged(nameof(QRcodeIndicatorImageSource));
                 }
             }
         }

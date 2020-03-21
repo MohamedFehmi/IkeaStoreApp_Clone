@@ -54,9 +54,14 @@
                 <Frame  AbsoluteLayout.LayoutBounds=".5,.5,.6,.4"
                         AbsoluteLayout.LayoutFlags="All"
                         BackgroundColor="Transparent"
-                        BorderColor="White"
+                        BorderColor="{Binding QRcodeOverlayContainerColor}"
                         CornerRadius="5"
                         HasShadow="False"/>
+
+                <Image  AbsoluteLayout.LayoutBounds=".74,.35,25,25"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        BackgroundColor="Transparent"
+                        Source="{Binding QRcodeIndicatorImageSource}"/>
 
                 <!--BARCODE overlay-->
                 <Frame  AbsoluteLayout.LayoutBounds=".5,.5,.55,.1"
