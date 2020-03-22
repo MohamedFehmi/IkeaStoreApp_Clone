@@ -5,6 +5,6 @@ namespace IkeaStore.IServices
     public interface IServiceDialogs
     {
         // Display a prompt to the user for barcode
-        public Task<string> BarcodeDialog();
+        Task<string> BarcodeDialog();
     }
 }

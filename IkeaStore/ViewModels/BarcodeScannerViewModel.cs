@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.UserDialogs;
+using IkeaStore.IServices;
+using IkeaStore.Services;
 using Xamarin.Forms;
 using ZXing.Client.Result;
 
@@ -12,6 +14,8 @@ namespace IkeaStore.ViewModels
 {
     public class BarcodeScannerViewModel : INotifyPropertyChanged
     {
+        private IServiceDialogs serviceDialogs;
+
         public ICommand ExitBarcodeScannerCommand { get; private set; }
         public ICommand OnBarcodeScannedCommand { get; private set; }
         public ICommand EnterBarcodeManuallyCommand { get; private set; }
@@ -32,8 +36,10 @@ namespace IkeaStore.ViewModels
 
         private string resultDigits= "000.000.000.000";
 
-        public BarcodeScannerViewModel()
+        public BarcodeScannerViewModel(IServiceDialogs _serviceDialogs)
         {
+            ServiceDialogs = _serviceDialogs;
+
             ExitBarcodeScannerCommand = new Command(ExitScanner);
             OnBarcodeScannedCommand = new Command(OnBarcodeScanned);
             EnterBarcodeManuallyCommand = new Command(async() => await PromptForBarcodeTyping());
@@ -106,7 +112,7 @@ namespace IkeaStore.ViewModels
             // TODO : Remove
             await Task.Delay(2000);
 
-            // TODO: Send a server request to fetch the product data that of the scanned barcode/qrcode
+            // TODO: Send a server request to fetch the product data of the scanned barcode/qrcode
             // TODO: Navigate to product detail page if the fetched result is a valid product
         }
 
@@ -137,17 +143,13 @@ namespace IkeaStore.ViewModels
         /// </summary>
         public async Task PromptForBarcodeTyping()
         {
-            //string result = await serviceDialogs.EnterBarcodeDialog()
-            PromptResult result = await UserDialogs.Instance.PromptAsync(new PromptConfig() { Title = "Enter barcode", OkText = "OK", CancelText = "Cancel" });
+            string result = await ServiceDialogs.BarcodeDialog();
 
-            if (result.Ok)
+            if (!string.IsNullOrEmpty(result))
             {
-                if (!string.IsNullOrEmpty(result.Text))
+                using (UserDialogs.Instance.Loading("Processing barcode"))
                 {
-                    using (UserDialogs.Instance.Loading("Fetching product data"))
-                    {
-                        await DealWithScanResult(result.Text);
-                    }
+                    await DealWithScanResult(result);
                 }
             }
         }
@@ -324,6 +326,20 @@ namespace IkeaStore.ViewModels
 
         #endregion : Scanner
 
+        public IServiceDialogs ServiceDialogs
+        {
+            get
+            {
+                return serviceDialogs;
+            }
+            set
+            {
+                if (value != null)
+                {
+                    serviceDialogs = value;
+                }
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
