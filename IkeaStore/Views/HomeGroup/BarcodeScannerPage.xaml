@@ -94,7 +94,8 @@
                     BorderWidth="2"
                     BorderColor="#118bb8"
                     Text="Enter the barcode manually"
-                    Margin="10">
+                    Margin="10"
+                    Command="{Binding EnterBarcodeManuallyCommand}">
             </Button>
             <!--<Frame Grid.Row="2"
                    HasShadow="True"

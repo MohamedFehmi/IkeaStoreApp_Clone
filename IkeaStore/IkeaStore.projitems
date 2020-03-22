@@ -103,5 +103,7 @@
     <Folder Include="$(MSBuildThisFileDirectory)Views\UserProfileGroup\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\Components\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\CustomRenderers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\" />
+    <Folder Include="$(MSBuildThisFileDirectory)IServices\" />
   </ItemGroup>
 </Project>

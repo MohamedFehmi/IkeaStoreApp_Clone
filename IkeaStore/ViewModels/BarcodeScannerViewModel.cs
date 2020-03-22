@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Acr.UserDialogs;
 using Xamarin.Forms;
 using ZXing.Client.Result;
 
@@ -13,12 +14,14 @@ namespace IkeaStore.ViewModels
     {
         public ICommand ExitBarcodeScannerCommand { get; private set; }
         public ICommand OnBarcodeScannedCommand { get; private set; }
+        public ICommand EnterBarcodeManuallyCommand { get; private set; }
 
+        // Scanner attributes
         private ZXing.Result result;
-
         private bool isAnalyzing = true;
         private bool isScanning = true;
 
+        // Layout attributes
         private Color barcodeOverlayContainerColor = Color.White;
         private Color resultDigitsBackground = Color.White;
 
@@ -33,6 +36,7 @@ namespace IkeaStore.ViewModels
         {
             ExitBarcodeScannerCommand = new Command(ExitScanner);
             OnBarcodeScannedCommand = new Command(OnBarcodeScanned);
+            EnterBarcodeManuallyCommand = new Command(async() => await PromptForBarcodeTyping());
         }
 
         public void ExitScanner()
@@ -41,7 +45,7 @@ namespace IkeaStore.ViewModels
         }
 
 
-#region : Scanner
+        #region : Scanner
 
         /// <summary>
         /// Defines the next steps to perform once the scanner finished the scan
@@ -100,6 +104,8 @@ namespace IkeaStore.ViewModels
         {
             // Simulate some async work
             await Task.Delay(2000);
+
+            // TODO: Send a server request to fetch the product data that of the scanned barcode/qrcode
         }
 
         /// <summary>
@@ -119,6 +125,20 @@ namespace IkeaStore.ViewModels
                 {
                     result = value;
                     OnPropertyChanged(nameof(Result));
+                }
+            }
+        }
+
+        public async Task PromptForBarcodeTyping()
+        {
+            //var result = await Shell.Current.DisplayPromptAsync("Article number", "","OK", "Cancel", keyboard: Keyboard.Numeric);
+            PromptResult result = await UserDialogs.Instance.PromptAsync(new PromptConfig() { Title = "Enter barcode", OkText = "OK", CancelText = "Cancel" });
+
+            if (result.Ok)
+            {
+                if (string.IsNullOrEmpty(result.Text))
+                {
+
                 }
             }
         }
@@ -293,7 +313,7 @@ namespace IkeaStore.ViewModels
             }
         }
 
-#endregion : Scanner
+        #endregion : Scanner
 
 
         public event PropertyChangedEventHandler PropertyChanged;
