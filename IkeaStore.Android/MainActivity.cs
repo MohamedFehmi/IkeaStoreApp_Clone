@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
 using Plugin.CurrentActivity;
+using Acr.UserDialogs;
 
 namespace IkeaStore.Droid
 {
@@ -25,9 +26,12 @@ namespace IkeaStore.Droid
 
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
+            UserDialogs.Init(this);
+
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
+            // Change the status bar color
             if (Build.VERSION.SdkInt >= BuildVersionCodes.M)
             {
                 Device.BeginInvokeOnMainThread(() =>

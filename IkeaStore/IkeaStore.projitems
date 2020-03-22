@@ -92,6 +92,8 @@
       <DependentUpon>BarcodeScannerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BarcodeScannerViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ServiceDialogs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IServices\IServiceDialogs.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />

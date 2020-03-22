@@ -103,9 +103,11 @@ namespace IkeaStore.ViewModels
         async Task DealWithScanResult(string scannedCode)
         {
             // Simulate some async work
+            // TODO : Remove
             await Task.Delay(2000);
 
             // TODO: Send a server request to fetch the product data that of the scanned barcode/qrcode
+            // TODO: Navigate to product detail page if the fetched result is a valid product
         }
 
         /// <summary>
@@ -129,16 +131,23 @@ namespace IkeaStore.ViewModels
             }
         }
 
+        /// <summary>
+        /// Display a UI prompt to the user to enter a barcode number.
+        /// Call to another task to handle the result retrieved from the prompt
+        /// </summary>
         public async Task PromptForBarcodeTyping()
         {
-            //var result = await Shell.Current.DisplayPromptAsync("Article number", "","OK", "Cancel", keyboard: Keyboard.Numeric);
+            //string result = await serviceDialogs.EnterBarcodeDialog()
             PromptResult result = await UserDialogs.Instance.PromptAsync(new PromptConfig() { Title = "Enter barcode", OkText = "OK", CancelText = "Cancel" });
 
             if (result.Ok)
             {
-                if (string.IsNullOrEmpty(result.Text))
+                if (!string.IsNullOrEmpty(result.Text))
                 {
-
+                    using (UserDialogs.Instance.Loading("Fetching product data"))
+                    {
+                        await DealWithScanResult(result.Text);
+                    }
                 }
             }
         }
