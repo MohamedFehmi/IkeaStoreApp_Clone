@@ -55,7 +55,7 @@
                                        CancelButtonColor="Blue"/>
 
                             <ImageButton x:Name="ScanBarCodeButton"
-                                         Source="barcodescanner"
+                                         Source="barcodebutton"
                                          IsVisible="{Binding IsScanBarcodeBtnVisible}"
                                          Command="{Binding OpenBarcodeScanner}"
                                          BackgroundColor="Transparent"

@@ -158,6 +158,11 @@
     <BundleResource Include="Resources\barcodescannergreen.png" />
     <BundleResource Include="Resources\qrcodegreen.png" />
     <BundleResource Include="Resources\qrcodewhite.png" />
+    <BundleResource Include="Resources\barcodebutton.png" />
+    <BundleResource Include="Resources\couchfilledIconblue.png" />
+    <BundleResource Include="Resources\homefilledIconblue.png" />
+    <BundleResource Include="Resources\shoppinglistfilledIconblue.png" />
+    <BundleResource Include="Resources\userprofilefilledIconblue.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CustomRenderers\" />
