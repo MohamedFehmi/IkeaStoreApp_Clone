@@ -73,6 +73,7 @@
                     </Frame>
                 </Grid>
 
+                <!--Left card : Insights-->
                 <Grid Grid.Row="1"
                       Grid.Column="0"
                       HeightRequest="220"
@@ -179,6 +180,7 @@
                                 Text="+ Add card"
                                 TextColor="White"
                                 FontSize="11"
+                                CornerRadius="0"
                                 VerticalOptions="End"/>
                 </Grid>
 
