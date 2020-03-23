@@ -45,7 +45,14 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
-                            <SearchBar x:Name="SearchBar" BackgroundColor="White" Focused="SearchBar_Focused" Unfocused="SearchBar_Unfocused" Placeholder="Search" HeightRequest="50" CancelButtonColor="Blue"/>
+                            <SearchBar x:Name="SearchBar"
+                                       BackgroundColor="White"
+                                       Focused="SearchBar_Focused"
+                                       Unfocused="SearchBar_Unfocused"
+                                       Placeholder="Search"
+                                       HeightRequest="50"
+                                       TextColor="Black"
+                                       CancelButtonColor="Blue"/>
 
                             <ImageButton x:Name="ScanBarCodeButton"
                                          Source="barcodescanner"

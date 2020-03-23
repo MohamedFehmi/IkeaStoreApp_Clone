@@ -19,7 +19,7 @@
                         <color key="backgroundColor" systemColor="systemBlueColor" colorSpace="calibratedRGB" red="0" green="0.47843137254902" blue="1" alpha="1"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="199" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="splash_logo.png">
-                                <rect key="frame" x="87" y="304" width="240" height="128"/>
+                                <rect key="frame" x="80" y="274" width="240" height="128"/>
                             </imageView>
                         </subviews>
                     </view>
