@@ -1,6 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="IkeaStore.Views.CategoriesGroup.CategoriesPage">
     <ContentPage.Content>
-        <Label Text="Welcome to Categories page" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+        <Label Text="Coming Soon!"
+               TextColor="Black"
+               FontSize="16"
+               HorizontalOptions="CenterAndExpand"
+               VerticalOptions="CenterAndExpand"/>
     </ContentPage.Content>
 </ContentPage>

@@ -8,7 +8,7 @@
 
     <Shell.Resources>
         <ResourceDictionary>
-            <Color x:Key="ThemeColor">White</Color>
+            <Color x:Key="ThemeColor">#118bb8</Color>
             <Color x:Key="InactiveColor">White</Color>
             <Color x:Key="BgColor">#118bb8</Color>
             <Style x:Key="BaseStyle" TargetType="Element">
@@ -27,19 +27,19 @@
     </Shell.Resources>
 
     <TabBar>
-        <Tab Icon="homeIcon">
+        <Tab Icon="homefilledIconblue">
             <ShellContent ContentTemplate="{DataTemplate views:HomeGroup.HomePage}"/>
         </Tab>
 
-        <Tab Icon="couchwhitefilledIcon">
+        <Tab Icon="couchfilledIconblue">
             <ShellContent ContentTemplate="{DataTemplate views:CategoriesGroup.CategoriesPage}"/>
         </Tab>
 
-        <Tab Icon="shoppinglistIcon">
+        <Tab Icon="shoppinglistfilledIconblue">
             <ShellContent ContentTemplate="{DataTemplate views:ShoppingListGroup.ShoppingListPage}"/>
         </Tab>
 
-        <Tab Icon="userprofileIcon">
+        <Tab Icon="userprofilefilledIconblue">
             <ShellContent ContentTemplate="{DataTemplate views:UserProfileGroup.UserProfilePage}"/>
         </Tab>
     </TabBar>
