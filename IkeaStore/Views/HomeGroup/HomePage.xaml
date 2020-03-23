@@ -238,7 +238,15 @@
                 <!--</Frame>-->
 
                 <!-- Search list -->
-                <ListView x:Name="SearchList" IsVisible="{Binding IsSearchListActive, Mode=TwoWay}" SeparatorVisibility="None" BackgroundColor="White" Grid.Row="0" Grid.RowSpan="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,65,0,0">
+                <ListView x:Name="SearchList"
+                          IsVisible="{Binding IsSearchListActive, Mode=TwoWay}"
+                          SeparatorVisibility="None"
+                          BackgroundColor="White"
+                          Grid.Row="0"
+                          Grid.RowSpan="4"
+                          Grid.Column="0"
+                          Grid.ColumnSpan="2"
+                          Margin="0,65,0,0">
 
                 </ListView>
 

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
              xmlns:vm="clr-namespace:IkeaStore.ViewModels"
+             xmlns:components="clr-namespace:IkeaStore.Views.Components"
              x:Class="IkeaStore.Views.HomeGroup.BarcodeScannerPage">
 
     <ContentPage.Resources>
@@ -10,7 +11,10 @@
     </ContentPage.Resources>
 
     <ContentPage.Content>
-        <Grid>
+        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                        AbsoluteLayout.LayoutFlags="All">
+            <Grid AbsoluteLayout.LayoutBounds="0,0,1,1"
+                        AbsoluteLayout.LayoutFlags="All">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60" />
                 <RowDefinition Height="Auto" />
@@ -100,6 +104,16 @@
             <!--<Frame Grid.Row="2"
                    HasShadow="True"
                    BackgroundColor="White"/>-->
+
         </Grid>
-    </ContentPage.Content>
+
+            <components:CustomDialog x:Name="CustomBarcodeDialog"
+                                     AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                     AbsoluteLayout.LayoutFlags="All"
+                                     IsVisible="{Binding IsCustomDialogOn}"/>
+
+            
+            
+        </AbsoluteLayout>
+        </ContentPage.Content>
 </ContentPage>

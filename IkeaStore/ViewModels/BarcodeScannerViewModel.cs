@@ -25,15 +25,16 @@ namespace IkeaStore.ViewModels
         private bool isAnalyzing = true;
         private bool isScanning = true;
 
+        // Custom Dialog
+        private bool isCustomDialogOn;
+
         // Layout attributes
         private Color barcodeOverlayContainerColor = Color.White;
         private Color resultDigitsBackground = Color.White;
-
         private Color qrcodeOverlayContainerColor = Color.White;
 
         private string barcodeIndicatorImageSource = "barcodescannerwhite";
         private string qrcodeIndicatorImageSource = "qrcodewhite";
-
         private string resultDigits= "000.000.000.000";
 
         public BarcodeScannerViewModel(IServiceDialogs _serviceDialogs)
@@ -143,15 +144,17 @@ namespace IkeaStore.ViewModels
         /// </summary>
         public async Task PromptForBarcodeTyping()
         {
-            string result = await ServiceDialogs.BarcodeDialog();
+            //string result = await ServiceDialogs.BarcodeDialog();
 
-            if (!string.IsNullOrEmpty(result))
-            {
-                using (UserDialogs.Instance.Loading("Processing barcode"))
-                {
-                    await DealWithScanResult(result);
-                }
-            }
+            //if (!string.IsNullOrEmpty(result))
+            //{
+            //    using (UserDialogs.Instance.Loading("Processing barcode"))
+            //    {
+            //        await DealWithScanResult(result);
+            //    }
+            //}
+
+            IsCustomDialogOn = true;
         }
 
         public bool IsAnalyzing
@@ -337,6 +340,22 @@ namespace IkeaStore.ViewModels
                 if (value != null)
                 {
                     serviceDialogs = value;
+                }
+            }
+        }
+
+        public bool IsCustomDialogOn
+        {
+            get
+            {
+                return isCustomDialogOn;
+            }
+            set
+            {
+                if (IsCustomDialogOn != value)
+                {
+                    isCustomDialogOn = value;
+                    OnPropertyChanged(nameof(IsCustomDialogOn));
                 }
             }
         }

@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IkeaStore.Views.Components.CustomDialog">
+    <ContentView.Content>
+
+        <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                        AbsoluteLayout.LayoutFlags="All">
+                <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+                        AbsoluteLayout.LayoutFlags="All"
+                        BackgroundColor="Black"
+                        Opacity="0.6"/>
+            
+                <Frame AbsoluteLayout.LayoutBounds=".5,.3,.8,.3"
+                        AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional, HeightProportional"
+                        BackgroundColor="White"
+                        BorderColor="#118bb8"
+                        CornerRadius="4"
+                        Padding="0"
+                        HasShadow="False">
+
+                        <Grid AbsoluteLayout.LayoutBounds="0,0,1,1"
+                              AbsoluteLayout.LayoutFlags="All">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <!-- Dialog title-->
+                            <Label  Grid.Row="0"
+                                    Margin="0,20,0,0"
+                                    Text="Enter barcode"
+                                    TextColor="Black"
+                                    FontSize="Title"
+                                    HorizontalOptions="CenterAndExpand"
+                                    VerticalOptions="StartAndExpand"/>
+
+                            <Entry  Grid.Row="1"
+                                    Placeholder="405678298758"
+                                    PlaceholderColor="Gray"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="EndAndExpand"
+                                    Margin="10"/>
+
+                            <!-- Accept / Cancel buttons -->
+                            <StackLayout Grid.Row="2"
+                                         VerticalOptions="End"
+                                         Orientation="Horizontal"
+                                         Spacing="0"
+                                         Padding="0,.4,0,0"
+                                         BackgroundColor="Black">
+                                <Button  Text="OK"
+                                         TextColor="White"
+                                         HorizontalOptions="FillAndExpand"
+                                         VerticalOptions="End"
+                                         CornerRadius="0"
+                                         Margin="0,0,.35,0"
+                                         BackgroundColor="{StaticResource DialogConfirmButton}"/>
+                                <Button  Text="Cancel"
+                                         TextColor="White"
+                                         HorizontalOptions="FillAndExpand"
+                                         VerticalOptions="End"
+                                         CornerRadius="0"
+                                         Margin=".35,0,0,0"
+                                         BackgroundColor="{StaticResource DialogConfirmButton}"/>
+                            </StackLayout>
+                        </Grid>
+                </Frame>
+        </AbsoluteLayout>
+
+    </ContentView.Content>
+</ContentView>
