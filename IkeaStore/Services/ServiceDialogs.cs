@@ -6,7 +6,7 @@ using IkeaStore.IServices;
 namespace IkeaStore.Services
 {
     /// <summary>
-    /// All user dialogs must be implemented here in oreder to avoid UI access in the view models
+    /// All user dialogs must be implemented here in oreder to avoid refrencing App class from the view models
     /// </summary>
     public class ServiceDialogs : IServiceDialogs
     {
@@ -23,6 +23,11 @@ namespace IkeaStore.Services
             }
             
             return string.Empty;
+        }
+
+        public async Task SingleActionCustomMessageAlert(string title, string message, string actionText)
+        {
+            await AppShell.Current.DisplayAlert(title, message, actionText);
         }
     }
 }

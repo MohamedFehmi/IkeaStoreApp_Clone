@@ -112,6 +112,7 @@ namespace IkeaStore.ViewModels
 
             // TODO: Send a server request to fetch the product data of the scanned barcode/qrcode
             // TODO: Navigate to product detail page if the fetched result is a valid product
+            await ServiceDialogs.SingleActionCustomMessageAlert("Coming Soon!", "\n* Navigation to article details page if it is available.\n\n * Alert when barcode is not recognized.", "OK");
         }
 
         /// <summary>
