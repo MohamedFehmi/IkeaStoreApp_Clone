@@ -11,6 +11,8 @@ namespace IkeaStore
         {
             InitializeComponent();
 
+            // In production mode or a buisiness project, avoid Experimental mode and only use stable components
+
             Device.SetFlags(new[] {
                 "CarouselView_Experimental",
                 "IndicatorView_Experimental"
