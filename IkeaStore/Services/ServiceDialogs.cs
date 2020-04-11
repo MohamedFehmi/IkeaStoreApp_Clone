@@ -6,7 +6,7 @@ using IkeaStore.IServices;
 namespace IkeaStore.Services
 {
     /// <summary>
-    /// All user dialogs must be implemented here in oreder to avoid refrencing App class from the view models
+    /// All user dialogs must be implemented here in oreder to avoid referencing App class from the view models
     /// </summary>
     public class ServiceDialogs : IServiceDialogs
     {
