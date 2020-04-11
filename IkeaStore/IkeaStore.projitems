@@ -102,6 +102,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\Components\CustomDialog.xaml.cs">
       <DependentUpon>CustomDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)IServices\IArticleService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ArticleService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
