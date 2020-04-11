@@ -4,30 +4,30 @@ using Xamarin.Forms;
 
 namespace IkeaStore.Views.Components
 {
-    public class CarouselViewProductTemplateSelector : DataTemplateSelector
+    public class CarouselViewArticleTemplateSelector : DataTemplateSelector
     {
-        public DataTemplate AllProductsView { get; set; }
-        public DataTemplate ProductSummaryView { get; set; }
+        public DataTemplate AllArticlesView { get; set; }
+        public DataTemplate ArticleSummaryView { get; set; }
 
-        public CarouselViewProductTemplateSelector()
+        public CarouselViewArticleTemplateSelector()
         {
-            AllProductsView = new DataTemplate(typeof(NavigateToAllProducts));
-            ProductSummaryView = new DataTemplate(typeof(ProductOverview));
+            AllArticlesView = new DataTemplate(typeof(NavigateToAllArticles));
+            ArticleSummaryView = new DataTemplate(typeof(ArticleOverview));
         }
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            Product product = (Product)item;
+            Article product = (Article)item;
 
-            // When the carousel view reaches the last element in its items source, use the AllProductsView template
-            if (product.IsLastItemInProducts)
+            // When the carousel view reaches the last element in its items source, use the AllArticlesView template
+            if (product.IsLastItemInArticles)
             {
-                return AllProductsView;
+                return AllArticlesView;
             }
-            // Otherwise use ProductSummaryView template
+            // Otherwise use ArticleSummaryView template
             else
             {
-                return ProductSummaryView;
+                return ArticleSummaryView;
             }
         }
     }

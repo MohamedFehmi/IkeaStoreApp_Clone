@@ -23,10 +23,10 @@ namespace IkeaStore.Views.Components
             tabbedViewViewModel = Resources["vm"] as TabbedViewViewModel;
             this.BindingContext = tabbedViewViewModel;
 
-            carouselView.ItemsSource = tabbedViewViewModel.GetAllProducts().Result;
+            carouselView.ItemsSource = tabbedViewViewModel.GetAllArticles().Result;
             // Retrieve the tabs as controls elements
             tabHeaders.Add(OffersTab);
-            tabHeaders.Add(NewProductsTab);
+            tabHeaders.Add(NewArticlesTab);
             tabHeaders.Add(PopularTab);
 
             // Retrieve the tabs contents

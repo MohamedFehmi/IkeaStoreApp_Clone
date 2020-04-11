@@ -13,24 +13,24 @@ namespace IkeaStore.ViewModels
     {
         public ICommand NavigateToOfferDetailsPageCommand { private set; get; }
 
-        public List<Product> ProductsList;
+        public List<Article> ArticlesList;
 
         public TabbedViewViewModel()
         {
             NavigateToOfferDetailsPageCommand = new Command(ToOfferDetails);
 
-            ProductsList = new List<Product>()
+            ArticlesList = new List<Article>()
             {
-                new Product () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu" },
-                new Product () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu" },
-                new Product () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu" },
-                new Product () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu", IsLastItemInProducts = true }
+                new Article () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu" },
+                new Article () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu" },
+                new Article () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu" },
+                new Article () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu", IsLastItemInArticles = true }
             };
         }
 
-        async public Task<List<Product>> GetAllProducts()
+        async public Task<List<Article>> GetAllArticles()
         {
-            return ProductsList;
+            return ArticlesList;
         }
 
         private void ToOfferDetails()

@@ -7,7 +7,7 @@
 
     <ContentView.Resources>
         <vm:TabbedViewViewModel x:Key="vm"/>
-        <local:CarouselViewProductTemplateSelector x:Key="templateSelector"/>
+        <local:CarouselViewArticleTemplateSelector x:Key="templateSelector"/>
     </ContentView.Resources>
 
     <ContentView.Content>
@@ -42,7 +42,7 @@
                        </Label.GestureRecognizers>
                 </Label>
 
-                <Label x:Name="NewProductsTab"
+                <Label x:Name="NewArticlesTab"
                        Grid.Column="1"
                        TextColor="Black"
                        FontSize="18"
@@ -107,7 +107,7 @@
                                    VerticalOptions="End"/>
                 </StackLayout>
 
-                <!--<Label x:Name="NewProductsTabContent" Text="New Products" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>-->
+                <!--<Label x:Name="NewArticlesTabContent" Text="New Articles" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>-->
 
                 <!--Popular tab-->
                 <!--<Label x:Name="PopularTabContent" Text="Popular" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>-->

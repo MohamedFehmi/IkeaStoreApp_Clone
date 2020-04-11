@@ -1,8 +1,10 @@
 ﻿using System;
 namespace IkeaStore.Models
 {
-    public class Product
+    public class Article
     {
+        public string ID { get; set; }
+
         public string Name { get; set; }
 
         public string Details { get; set; }
@@ -17,6 +19,6 @@ namespace IkeaStore.Models
 
         public string Category { get; set; }
 
-        public bool IsLastItemInProducts { get; set; }
+        public bool IsLastItemInArticles { get; set; }
     }
 }

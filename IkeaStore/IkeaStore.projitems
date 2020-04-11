@@ -91,7 +91,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Views\Components\NavigateToAllProducts.xaml.cs">
       <DependentUpon>NavigateToAllProducts.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Product.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Article.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\HomeGroup\BarcodeScannerPage.xaml.cs">
       <DependentUpon>BarcodeScannerPage.xaml</DependentUpon>
     </Compile>

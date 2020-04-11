@@ -4,9 +4,9 @@ using Xamarin.Forms;
 
 namespace IkeaStore.Views.Components
 {
-    public partial class NavigateToAllProducts : ContentView
+    public partial class NavigateToAllArticles : ContentView
     {
-        public NavigateToAllProducts()
+        public NavigateToAllArticles()
         {
             InitializeComponent();
         }

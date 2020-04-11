@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="IkeaStore.Views.Components.ProductOverview">
+             x:Class="IkeaStore.Views.Components.ArticleOverview">
     <ContentView.Content>
 
         <Grid>
@@ -10,14 +10,14 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!--Product image-->
+            <!--Article image-->
             <ImageButton Grid.Column="0"
                          Padding="20,30,20,30"
                          BackgroundColor="Transparent"
                          Source="offerscover.jpg"
                          Aspect="AspectFill"/>
 
-            <!--Product details-->
+            <!--Article details-->
             <!--<Grid Grid.Column="1" RowSpacing="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -28,14 +28,14 @@
                 <StackLayout Grid.Column="1"
                              Orientation="Vertical"
                              VerticalOptions="CenterAndExpand">
-                    <Label x:Name="NewProductLabel"
+                    <Label x:Name="NewArticleLabel"
                        Grid.Row="0"
                        Text="Neu"
                        VerticalOptions="Center"
                        FontSize="14"
                        TextColor="Orange"/>
 
-                <Label x:Name="ProductNameLabel"
+                <Label x:Name="ArticleNameLabel"
                        Grid.Row="1"
                        VerticalOptions="Center"
                        Text="KUGGIS"
@@ -43,7 +43,7 @@
                        FontAttributes="Bold"
                        TextColor="Black"/>
 
-                <Label x:Name="ProductDetailLabel"
+                <Label x:Name="ArticleDetailLabel"
                        Grid.Row="2"
                        VerticalOptions="Center"
                        Text="Box 30x30x30 cm"
