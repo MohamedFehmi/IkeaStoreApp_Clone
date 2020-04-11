@@ -9,9 +9,11 @@ namespace IkeaStore.Models
 
         public string Details { get; set; }
 
-        public double[] Dimensions { get; set; }
+        public ArticleDimensions Dimensions { get; set; }
 
-        public string Image { get; set; }
+        public string MainImage { get; set; }
+
+        public string[] ListOfImages { get; set; }
 
         public double Price { get; set; }
 

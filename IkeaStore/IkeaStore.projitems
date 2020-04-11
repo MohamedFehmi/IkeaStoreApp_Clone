@@ -104,6 +104,7 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)IServices\IArticleService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ArticleService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ArticleDimensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
