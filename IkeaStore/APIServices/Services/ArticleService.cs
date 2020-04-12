@@ -8,19 +8,24 @@ namespace IkeaStore.Services
 {
     public class ArticleService : IArticleService
     {
-        public ArticleService()
+        private static ArticleService instance;
+        public static ArticleService Instance
         {
+            get
+            {
+                return instance != null ? instance : instance = new ArticleService();
+            }
         }
 
         public Task<Article> GetArticleByID(string ID)
         {
             try
             {
-
+                return Task.FromResult(new Article());
             }
             catch (Exception e)
             {
-                return new Article();
+                return Task.FromResult(new Article());
             }
         }
 
@@ -29,10 +34,11 @@ namespace IkeaStore.Services
             try
             {
 
+                return Task.FromResult(new List<Article>());
             }
             catch (Exception e)
             {
-                return new List<Article>();
+                return Task.FromResult(new List<Article>());
             }
         }
 
@@ -40,11 +46,11 @@ namespace IkeaStore.Services
         {
             try
             {
-
+                return Task.FromResult(new List<Article>());
             }
             catch (Exception e)
             {
-                return new List<Article>();
+                return Task.FromResult(new List<Article>());
             }
         }
     }

@@ -96,16 +96,16 @@
       <DependentUpon>BarcodeScannerPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BarcodeScannerViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\ServiceDialogs.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)IServices\IServiceDialogs.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Managers\ServiceInstanceManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\Components\CustomDialog.xaml.cs">
       <DependentUpon>CustomDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)IServices\IArticleService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Services\ArticleService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ArticleDimensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Dummies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)APIServices\IServices\IArticleService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)APIServices\Services\ArticleService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LocalServices\ServiceDialogs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)APIServices\ServicesUtilities\Dummies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LocalServices\IServiceDialogs.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />
@@ -117,8 +117,11 @@
     <Folder Include="$(MSBuildThisFileDirectory)Views\UserProfileGroup\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\Components\" />
     <Folder Include="$(MSBuildThisFileDirectory)Views\CustomRenderers\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Services\" />
-    <Folder Include="$(MSBuildThisFileDirectory)IServices\" />
     <Folder Include="$(MSBuildThisFileDirectory)Managers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)APIServices\" />
+    <Folder Include="$(MSBuildThisFileDirectory)LocalServices\" />
+    <Folder Include="$(MSBuildThisFileDirectory)APIServices\IServices\" />
+    <Folder Include="$(MSBuildThisFileDirectory)APIServices\Services\" />
+    <Folder Include="$(MSBuildThisFileDirectory)APIServices\ServicesUtilities\" />
   </ItemGroup>
 </Project>

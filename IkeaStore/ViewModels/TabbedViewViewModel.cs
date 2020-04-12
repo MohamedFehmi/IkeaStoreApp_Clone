@@ -13,24 +13,26 @@ namespace IkeaStore.ViewModels
     {
         public ICommand NavigateToOfferDetailsPageCommand { private set; get; }
 
-        public List<Article> ArticlesList;
+        //public List<Article> ArticlesList;
 
         public TabbedViewViewModel()
         {
             NavigateToOfferDetailsPageCommand = new Command(ToOfferDetails);
 
-            ArticlesList = new List<Article>()
-            {
-                new Article () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu" },
-                new Article () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu" },
-                new Article () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu" },
-                new Article () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu", IsLastItemInArticles = true }
-            };
+            Device.BeginInvokeOnMainThread(async () => await GetAllArticles());
+
+            //ArticlesList = new List<Article>()
+            //{
+            //    new Article () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu" },
+            //    new Article () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu" },
+            //    new Article () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu" },
+            //    new Article () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu", IsLastItemInArticles = true }
+            //};
         }
 
         async public Task<List<Article>> GetAllArticles()
         {
-            return ArticlesList;
+            return null;
         }
 
         private void ToOfferDetails()
