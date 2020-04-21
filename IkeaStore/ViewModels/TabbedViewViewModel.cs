@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using IkeaStore.Models;
+using IkeaStore.Services;
 using Xamarin.Forms;
 
 namespace IkeaStore.ViewModels
@@ -12,6 +13,7 @@ namespace IkeaStore.ViewModels
     public class TabbedViewViewModel : INotifyPropertyChanged
     {
         public ICommand NavigateToOfferDetailsPageCommand { private set; get; }
+        ArticleService articleService;
 
         //public List<Article> ArticlesList;
 
@@ -19,21 +21,33 @@ namespace IkeaStore.ViewModels
         {
             NavigateToOfferDetailsPageCommand = new Command(ToOfferDetails);
 
+            articleService = new ArticleService();
+
             Device.BeginInvokeOnMainThread(async () => await GetAllArticles());
-
-            //ArticlesList = new List<Article>()
-            //{
-            //    new Article () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu" },
-            //    new Article () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu" },
-            //    new Article () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu" },
-            //    new Article () { Name = "MALM", Details = "6-drawer dresser", Price = 179.00, Currency = "$", Category = "Neu", IsLastItemInArticles = true }
-            //};
         }
 
-        async public Task<List<Article>> GetAllArticles()
+        async public Task GetAllArticles()
         {
-            return null;
+            Articles = await articleService.GetNewArticles();
         }
+
+        #region Bindable Properties
+
+        private List<Article> articles = new List<Article>();
+        public List<Article> Articles
+        {
+            get
+            {
+                return articles;
+            }
+            set
+            {
+                articles = value;
+                OnPropertyChanged(nameof(Articles));
+            }
+        }
+
+        #endregion
 
         private void ToOfferDetails()
         {

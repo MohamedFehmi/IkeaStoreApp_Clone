@@ -97,6 +97,7 @@
                              Orientation="Vertical">
                     <CarouselView x:Name="carouselView"
                               ItemTemplate="{StaticResource templateSelector}"
+                              ItemsSource="{Binding Articles}"
                               IndicatorView="indicatorView"
                               HorizontalOptions="CenterAndExpand"
                               VerticalOptions="CenterAndExpand"/>
